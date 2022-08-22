@@ -5,7 +5,7 @@ import RenderItem from './components/RenderItem'
 
 const Index = () => {
   return (
-    <View>
+
         <FlatList
             contentContainerStyle= { styles.flatlist }
 
@@ -18,7 +18,7 @@ const Index = () => {
 
             // horizontal
         />
-    </View>
+        
   )
 }
 
