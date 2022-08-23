@@ -29,7 +29,7 @@ export const styles = StyleSheet.create({
     },
   
     flatlist: {
-      
+      paddingBottom : '12.5%',
     },
   
     viewImageNews: {
@@ -38,13 +38,14 @@ export const styles = StyleSheet.create({
   
     imageNews: {
       height : 75,
-      width : 75,
+    //   width : 75,
+      aspectRatio : 1,
     //   marginTop : 15,
       borderRadius : 55,
     },
   
     textNews: {
-      paddingHorizontal:5,
+      paddingHorizontal:15,
       color : 'rgba( 255, 255, 255, 1)',
       width : '75%',
     },
