@@ -22,7 +22,7 @@ export const styles = StyleSheet.create({
       paddingHorizontal:15,
       marginBottom:15,
       marginHorizontal:10,
-      backgroundColor : colors.primary,
+      backgroundColor : 'rgba(70, 155, 245, 0.75)',
       borderRadius : 15,
       flexDirection : 'row',
       height : 85,
@@ -30,6 +30,21 @@ export const styles = StyleSheet.create({
   
     flatlist: {
       paddingBottom : '12.5%',
+    },
+  
+    header: {
+        flexDirection : 'row',
+        alignItems : 'center',
+        // justifyContent : 'center',
+    },
+  
+    textHeader: {
+        fontSize : 25,
+    },
+  
+    icone: {
+    //   backgroundColor : 'red',
+      width : '15%',
     },
   
     viewImageNews: {
@@ -42,12 +57,14 @@ export const styles = StyleSheet.create({
       aspectRatio : 1,
     //   marginTop : 15,
       borderRadius : 55,
+      borderWidth : 0.85,
+      borderColor : 'black'
     },
   
     textNews: {
       paddingHorizontal:15,
       color : 'rgba( 255, 255, 255, 1)',
-      width : '75%',
+      width : '85%',
     },
     
   })

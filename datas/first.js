@@ -8,11 +8,11 @@ export const dataApp = [
     nomApp : "Insta" },
 
     { id : 3,
+    titre : "Tuto",
+    nomApp : "AppTuto" },
+
+    { id : 4,
     titre : "Action Vérité",
     nomApp : "ActionVerite" },
-
-    // { id : 4,
-    // titre : "Tik Tokeuh",
-    // nomApp : "TikTokeuh" },
       
 ] ;

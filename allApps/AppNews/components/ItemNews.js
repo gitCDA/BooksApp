@@ -8,13 +8,13 @@ const ItemNews = ( {item} ) => {
     const navigation = useNavigation();
 
     const detailsNews = () => { 
-        // navigation.navigate( 'Details', { item : item } )
+        navigation.navigate( 'First' )
     }
 
   return (
 
     <TouchableOpacity
-    // onPress={ detailsNews }
+    onPress={ detailsNews }
     >
 
         <View style={ styles.app }>
