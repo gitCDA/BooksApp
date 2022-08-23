@@ -19,9 +19,34 @@ export const styles = StyleSheet.create({
     },
   
     app: {
-      paddingHorizontal:25,
-      paddingVertical:55,
+      paddingHorizontal:15,
+      marginBottom:15,
+      marginHorizontal:10,
+      backgroundColor : colors.primary,
+      borderRadius : 15,
+      flexDirection : 'row',
+      height : 85,
+    },
+  
+    flatlist: {
       
+    },
+  
+    viewImageNews: {
+      justifyContent : 'center',
+    },
+  
+    imageNews: {
+      height : 75,
+      width : 75,
+    //   marginTop : 15,
+      borderRadius : 55,
+    },
+  
+    textNews: {
+      paddingHorizontal:5,
+      color : 'rgba( 255, 255, 255, 1)',
+      width : '75%',
     },
     
   })

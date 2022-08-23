@@ -1,7 +1,7 @@
 export const dataApp = [
     { id : 1,
       titre : "News",
-      nomApp : "News" },
+      nomApp : "NewsScreen" },
 
     { id : 2,
     titre : "Insta Kilo",
