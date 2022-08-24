@@ -13,8 +13,10 @@ const Tuto = () => {
         navigation.goBack()
     }
 
+
 //   getNombres c'est le tableau en l'état
   const [getNombres, setNombres] = useState( [1,2,3,4,5,6,7,8,9,10] )
+
 
 // Ajouter des nombres en fct° des précédents
   const AddNombres = (  ) => { 
@@ -23,6 +25,7 @@ const Tuto = () => {
     setNombres( tempNombres )
 
   }
+  
 
   return (
 
