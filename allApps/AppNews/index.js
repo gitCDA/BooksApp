@@ -1,11 +1,11 @@
 import { FlatList, StyleSheet, Text, View, Image, Button } from 'react-native'
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { styles } from '../First/theme/style'
 import Icone from 'react-native-vector-icons/Ionicons'
 import { useNavigation } from '@react-navigation/native'
 import { news } from '../../datas/news'
 import ItemNews from './components/ItemNews'
-import { useState } from 'react'
+import { apiNews } from './function/api'
 
 const NewsScreen = () => {
     
@@ -19,9 +19,55 @@ const NewsScreen = () => {
     
     const [getNews, setNews] = useState( [] ) ;
     
+    // Gestion de la pagination entre les pages
+    const [getPage, setPage] = useState( 1 ) ;
+    
+    // Pour charger les news sur la page
     const initNews = () => { 
-        setNews ( [] )
+        {
+            getNews : ([])
+            ?
+            setNews ( news )
+            :
+            ""
+        }
+        }
+        
+    // Pour aller chercher les news dans l'api
+    const initNewsApi = async () => { 
+            
+        // Chargement de mon api
+        const articles = await apiNews(getPage) ;
+        setNews( articles ) ;
+        // console.log("apiNews")
+
     }
+
+    // Chargement page suivante
+    const nextPage = async () => { 
+        
+        setPage(
+            // {
+            // getPage : 10
+            // ?
+            getPage + 1
+            // :
+            // getPage = 2
+            // }
+            ) ;
+
+        const articles = await apiNews(getPage) ;
+        setNews( articles ) ;
+        console.log( getPage ) ;
+
+    }
+
+    // S'enclenche à chq ouverture de la page
+    useEffect(() => { 
+
+        initNewsApi() ;
+        
+    }, [] )
 
   return (
     <View>
@@ -40,8 +86,8 @@ const NewsScreen = () => {
 
         ListHeaderComponent = { 
         <Button
-            onPress={ initNews }
-            title="Init News"
+            title="Next"
+            onPress={ nextPage }
             color="#841584"
             accessibilityLabel="Learn more about this purple button"
         /> }
@@ -50,7 +96,7 @@ const NewsScreen = () => {
             <Text> Il n'y a pas d'actus à voir </Text>
         }
 
-        data={news}
+        data={getNews}
         
         renderItem={ ( {item} ) =>
             <ItemNews item = { item } />
