@@ -1,8 +1,12 @@
 import axios from "axios"
 
-// Variables de mon Api
-const urlApi = 'https://newsapi.org/v2/everything'
-const apiKey = 'd277b3f20548401c877c2cc6ec1dc050'
+// Variables de mon Api api.org
+// const urlApi = 'https://newsapi.org/v2/everything'
+// const apiKey = 'd277b3f20548401c877c2cc6ec1dc050'
+
+// Variables de mon Api gnews.io
+const urlApi = 'https://gnews.io/api/v4/search'
+const apiKey = 'ce07c42f1ff74d57d1be54c5c114cbbe'
 
 export const apiNews = async ( page ) => { 
 
@@ -10,12 +14,13 @@ export const apiNews = async ( page ) => {
 
   // Paramètres de mon Api
   const params = {
-    q : 'Apple' ,
+    q : 'Martinique' ,
+    lang : 'fr',
     from : '2022-08-24' ,
     sortBy : 'popularity' ,
-    apiKey : apiKey ,
+    token : apiKey ,
     page : page ,
-    pageSize : 10,
+    max : 10,
   }
 
   const {data} = await axios.get( urlApi, {params:params} )

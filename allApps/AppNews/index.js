@@ -1,4 +1,4 @@
-import { FlatList, StyleSheet, Text, View, Image, Button } from 'react-native'
+import { FlatList, StyleSheet, Text, View, Image, Button, ActivityIndicator } from 'react-native'
 import React, { useState, useEffect } from 'react'
 import { styles } from '../First/theme/style'
 import Icone from 'react-native-vector-icons/Ionicons'
@@ -6,6 +6,7 @@ import { useNavigation } from '@react-navigation/native'
 import { news } from '../../datas/news'
 import ItemNews from './components/ItemNews'
 import { apiNews } from './function/api'
+import RenderEmptyComponent from './components/RenderEmptyComponent'
 
 const NewsScreen = () => {
     
@@ -21,24 +22,31 @@ const NewsScreen = () => {
     
     // Gestion de la pagination entre les pages
     const [getPage, setPage] = useState( 1 ) ;
+
+    // Variable pour le  waiting avant de recevoir les données
+    const  [waiting, setWaiting] = useState( false ) ;
     
     // Pour charger les news sur la page
     const initNews = () => { 
-        {
             getNews : ([])
             ?
             setNews ( news )
             :
             ""
         }
-        }
         
     // Pour aller chercher les news dans l'api
-    const initNewsApi = async () => { 
+    const loadNewsApi = async () => { 
             
         // Chargement de mon api
         const articles = await apiNews(getPage) ;
-        setNews( articles ) ;
+        setWaiting(true) ;
+        setTimeout( () => {
+                // 
+                setNews( [...getNews , ...articles] ) ;
+                setWaiting( false ) ;
+                    }
+                    , 5000 ) ;
         // console.log("apiNews")
 
     }
@@ -47,25 +55,24 @@ const NewsScreen = () => {
     const nextPage = async () => { 
         
         setPage(
-            // {
-            // getPage : 10
+            // getPage > pageSize
             // ?
             getPage + 1
             // :
-            // getPage = 2
-            // }
+            // getPage = 1
             ) ;
 
-        const articles = await apiNews(getPage) ;
-        setNews( articles ) ;
-        console.log( getPage ) ;
+        loadNewsApi() ;
+        // console.log( getPage ) ;
 
     }
 
     // S'enclenche à chq ouverture de la page
     useEffect(() => { 
 
-        initNewsApi() ;
+        setWaiting(true) ;
+
+        loadNewsApi() ;
         
     }, [] )
 
@@ -83,6 +90,15 @@ const NewsScreen = () => {
 
       <FlatList 
         contentContainerStyle = { styles.flatlist }
+        
+        data={getNews}
+        
+        renderItem={ ( {item} ) =>
+            <ItemNews item = { item } />
+        }
+
+        keyExtractor={ (item, index) => 'key'+index}
+        // keyExtractor={ (item) => item.id }
 
         ListHeaderComponent = { 
         <Button
@@ -93,16 +109,8 @@ const NewsScreen = () => {
         /> }
 
         ListEmptyComponent = {
-            <Text> Il n'y a pas d'actus à voir </Text>
-        }
-
-        data={getNews}
-        
-        renderItem={ ( {item} ) =>
-            <ItemNews item = { item } />
-        }
-
-        keyExtractor={ (item) => item.id }
+            <RenderEmptyComponent waiting={waiting} /> }
+        ListFooterComponent={ ( waiting && getNews.length > 0 ) && <ActivityIndicator/> }
 
         // horizontal
       />

@@ -20,7 +20,7 @@ const ItemNews = ( {item} ) => {
         <View style={ styles.app }>
 
             <View style={ styles.viewImageNews }>
-            <Image source={ { uri : item.urlToImage } } style={ styles.imageNews }>
+            <Image source={ { uri : item.image } } style={ styles.imageNews }>
                 
             </Image>
             </View>
