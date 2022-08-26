@@ -39,14 +39,17 @@ const NewsScreen = () => {
     const loadNewsApi = async () => { 
             
         // Chargement de mon api
-        const articles = await apiNews(getPage) ;
+        const data = await apiNews(getPage) ;
+
         setWaiting(true) ;
+
         setTimeout( () => {
-                // 
-                setNews( [...getNews , ...articles] ) ;
+                // setNews( [...getNews , ...articles] ) ;
+                setNews( [data] ) ;
                 setWaiting( false ) ;
                     }
-                    , 5000 ) ;
+                    , 1000 ) ;
+
         // console.log("apiNews")
 
     }
@@ -86,9 +89,9 @@ const NewsScreen = () => {
 
         <Text style= { styles.textHeader }>Liste des News</Text>
 
-      </View>
+        </View>
 
-      <FlatList 
+        <FlatList 
         contentContainerStyle = { styles.flatlist }
         
         data={getNews}
@@ -97,7 +100,7 @@ const NewsScreen = () => {
             <ItemNews item = { item } />
         }
 
-        keyExtractor={ (item, index) => 'key'+index}
+        keyExtractor={ (item, index) => 'key' + index}
         // keyExtractor={ (item) => item.id }
 
         ListHeaderComponent = { 
@@ -108,11 +111,12 @@ const NewsScreen = () => {
             accessibilityLabel="Learn more about this purple button"
         /> }
 
-        ListEmptyComponent = {
-            <RenderEmptyComponent waiting={waiting} /> }
+        ListEmptyComponent = { <RenderEmptyComponent waiting={ waiting } /> }
+
         ListFooterComponent={ ( waiting && getNews.length > 0 ) && <ActivityIndicator/> }
 
         // horizontal
+        
       />
 
     </View>

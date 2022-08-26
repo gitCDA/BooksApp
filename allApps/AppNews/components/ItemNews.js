@@ -8,16 +8,17 @@ const ItemNews = ( {item} ) => {
     const navigation = useNavigation();
 
     const detailsNews = () => { 
-        navigation.navigate( 'First' )
+        navigation.navigate( 'Details', { item } )
     }
 
   return (
 
     <TouchableOpacity
     onPress={ detailsNews }
+     style={ styles.app }
     >
 
-        <View style={ styles.app }>
+        {/* <View> */}
 
             <View style={ styles.viewImageNews }>
             <Image source={ { uri : item.image } } style={ styles.imageNews }>
@@ -27,7 +28,7 @@ const ItemNews = ( {item} ) => {
             
             <Text style={ styles.textNews }>{ item.title }</Text>
 
-        </View>
+        {/* </View> */}
 
     </TouchableOpacity>
 

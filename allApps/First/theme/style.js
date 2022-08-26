@@ -61,10 +61,33 @@ export const styles = StyleSheet.create({
       borderColor : 'black'
     },
   
+    imageNews2: {
+      height : '75%',
+      width : '100%',
+      // aspectRatio : 1,
+    //   marginTop : 15,
+      borderWidth : 0.85,
+      borderColor : 'black'
+    },
+  
     textNews: {
       paddingHorizontal:15,
       color : 'rgba( 255, 255, 255, 1)',
       width : '85%',
+    },
+  
+    textNewsDetails: {
+      paddingHorizontal:15,
+      color : 'black',
+      width : '85%',
+      fontSize: 25,
+    },
+  
+    textDescriptionDetails: {
+      paddingHorizontal:15,
+      color : 'black',
+      width : '85%',
+      fontSize: 15,
     },
     
   })

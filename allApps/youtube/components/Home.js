@@ -3,7 +3,6 @@ import React from 'react'
 import Header from './Header'
 import Tendance from './Tendance'
 import Content from './Content'
-import VideosContent from './VideosContent'
 
 
 

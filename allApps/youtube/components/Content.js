@@ -2,7 +2,6 @@ import { StyleSheet, Text, View,FlatList, TouchableOpacity } from 'react-native'
 import React, { useState } from 'react'
 import MiniCards from './cards/MiniCards'
 import MaxiCards from './cards/MaxiCards'
-import MaxiVideo from './cards/MaxiVideo'
 import { categories } from '../constante/categories'
 import { videos } from '../constante/videos'
 import Icone from "react-native-vector-icons/AntDesign"

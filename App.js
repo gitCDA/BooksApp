@@ -7,6 +7,8 @@ import NewsScreen from './allApps/AppNews';
 import Insta from './allApps/Insta';
 import ActionVerite from './allApps/ActionVerite';
 import Tuto from './allApps/TutoFlatList';
+import Details from './allApps/AppNews/components/Details';
+import AppY from './allApps/youtube';
 
 
 const Stack = createNativeStackNavigator();
@@ -23,11 +25,14 @@ const App = () => {
 
 
         <Stack.Screen name="First" component={First} />
+
+        {/* News app Screen */}
         <Stack.Screen name="NewsScreen" component={NewsScreen} />
         <Stack.Screen name="Insta" component={Insta} />
         <Stack.Screen name="ActionVerite" component={ActionVerite} />
         <Stack.Screen name="AppTuto" component={Tuto} />
-        {/* <Stack.Screen name="AppTuto" component={Tuto} /> */}
+        <Stack.Screen name="Details" component={Details} />
+        {/* <Stack.Screen name="AppY" component={AppY} /> */}
 
       </Stack.Navigator>
 

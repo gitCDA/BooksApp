@@ -3,6 +3,7 @@ import React from 'react'
 import { styles } from '../theme/style'
 import { useNavigation } from '@react-navigation/native'
 
+// Composant permettant d'afficher la liste des Apps dans First
 const RenderItem = ( {item} ) => {
 
   const navigation = useNavigation() ;

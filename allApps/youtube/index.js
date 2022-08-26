@@ -3,7 +3,6 @@ import React from 'react'
 import Header from './components/Header'
 import Tendance from './components/Tendance'
 import Content from './components/Content'
-import VideosContent from './components/VideosContent'
 import Home from './components/Home'
 import Details from './components/Details'
 import { NavigationContainer } from '@react-navigation/native';
@@ -11,7 +10,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 const Stack = createNativeStackNavigator();
 
-const App = () => {
+const AppY = () => {
   return (
     <View style={ styles.app }>
 
@@ -34,7 +33,7 @@ const App = () => {
   )
 }
 
-export default App
+export default AppY
 
 const styles = StyleSheet.create({
   app: { flex:1 },
