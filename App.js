@@ -9,7 +9,9 @@ import ActionVerite from './allApps/ActionVerite';
 import Tuto from './allApps/TutoFlatList';
 import Details from './allApps/AppNews/components/Details';
 import AppY from './allApps/youtube';
-
+// Importations Redux
+import store from './redux/store';
+import { Provider } from 'react-redux';
 
 const Stack = createNativeStackNavigator();
 

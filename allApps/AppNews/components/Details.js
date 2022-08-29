@@ -12,20 +12,20 @@ const Details = ( { route } ) => {
 
     <View>
       
-        <Image
-            style={styles.imageNews2}
-            source={ item.image }
-        />
+      <Image
+          style={styles.imageNews2}
+          source={ item.image }
+      />
 
-        <View style={ styles.viewTextDetails1 }>
-        <Text style={ styles.textNewsDetails }>{ item.title }</Text>
-        <Text style={ styles.textNewsDetails }>{ item.publishedAt }</Text>
-        </View>
+      <View style={ styles.viewTextDetails1 }>
+      <Text style={ styles.textNewsDetails }>{ item.title }</Text>
+      <Text style={ styles.textNewsDetails }>{ item.publishedAt }</Text>
+      </View>
 
-        <Text style={ styles.textSourceDetails }>{ item.source }</Text>
+      <Text style={ styles.textSourceDetails }>{ item.source }</Text>
 
 
-        <Text style={ styles.textDescriptionDetails }>{ item.description }</Text>
+      <Text style={ styles.textDescriptionDetails }>{ item.description }</Text>
 
     </View>
 

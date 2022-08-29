@@ -27,31 +27,31 @@ const NewsScreen = () => {
     const  [waiting, setWaiting] = useState( false ) ;
     
     // Pour charger les news sur la page
-    const initNews = () => { 
-            getNews : ([])
-            ?
-            setNews ( news )
-            :
-            ""
-        }
+    // const initNews = () => { 
+    //         getNews : ([])
+    //         ?
+    //         setNews ( news )
+    //         :
+    //         ""
+    //     }
         
     // Pour aller chercher les news dans l'api
     const loadNewsApi = async () => { 
             
         // Chargement de mon api
-        const data = await apiNews(getPage) ;
+        const articles = await apiNews(getPage) ;
 
         setWaiting(true) ;
 
         setTimeout( () => {
-                // setNews( [...getNews , ...articles] ) ;
-                setNews( [data] ) ;
+                setNews( [...getNews , ...articles] ) ;
+                // setNews( articles ) ;
                 setWaiting( false ) ;
                     }
                     , 1000 ) ;
 
         // console.log("apiNews")
-
+        
     }
 
     // Chargement page suivante
@@ -71,7 +71,7 @@ const NewsScreen = () => {
     }
 
     // S'enclenche à chq ouverture de la page
-    useEffect(() => { 
+    useEffect( () => { 
 
         setWaiting(true) ;
 
@@ -97,6 +97,7 @@ const NewsScreen = () => {
         data={getNews}
         
         renderItem={ ( {item} ) =>
+            // (console.log(item))
             <ItemNews item = { item } />
         }
 
@@ -120,6 +121,7 @@ const NewsScreen = () => {
       />
 
     </View>
+    
   )
 }
 
