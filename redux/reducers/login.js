@@ -2,7 +2,7 @@ import { EDIT_LOGIN } from "../type";
 
 // Initialisation de la valeur du State login
 
-const initStateLogin = false ;
+const initStateLogin = true ;
 
 export default function( state = initStateLogin, action ){
 

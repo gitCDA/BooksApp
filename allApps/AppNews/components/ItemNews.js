@@ -18,17 +18,17 @@ const ItemNews = ( {item} ) => {
      style={ styles.app }
     >
 
-        {/* <View> */}
+      {/* <View> */}
 
-            <View style={ styles.viewImageNews }>
-            <Image source={ { uri : item.image } } style={ styles.imageNews }>
-                
-            </Image>
-            </View>
+        <View style={ styles.viewImageNews }>
+        <Image source={ { uri : item.image } } style={ styles.imageNews }>
             
-            <Text style={ styles.textNews }>{ item.title }</Text>
+        </Image>
+        </View>
+        
+        <Text style={ styles.textNews }>{ item.title }</Text>
 
-        {/* </View> */}
+      {/* </View> */}
 
     </TouchableOpacity>
 

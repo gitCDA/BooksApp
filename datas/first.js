@@ -12,11 +12,11 @@ export const dataApp = [
     nomApp : "AppTuto" },
 
     { id : 4,
-    titre : "Action Vérité",
-    nomApp : "ActionVerite" },
+    titre : "E-commerce",
+    nomApp : "AppEcommerce" },
 
     { id : 5,
     titre : "You Tube",
-    nomApp : "Youtube" },
+    nomApp : "Home" },
       
 ] ;
