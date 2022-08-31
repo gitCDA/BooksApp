@@ -3,22 +3,46 @@ import React from 'react'
 import Connexion from './Public/Connexion'
 import Private from './Private'
 import { useSelector } from 'react-redux'
+import Public from './Public'
 
 const Ecommerce = () => {
 
   // Récupérer la variable login qui est dans le state
   const { login } = useSelector( state => state) ;
 
-  console.log(login)
+//   console.log(login)
   return (
 
     <View>
 
       <Text>E-commerce</Text>
       
-      { !login ? <Connexion /> :
+      {
+        
+      !login ?
+      
+      <Connexion />
+      
+      :
+      
+      <View>
+      <Private />
+      <Public />
+      </View>
+      
+      }
+      
+      {/* {
+        
+      !login ?
+      
+      <Public />
+      
+      :
 
-      <Private /> }
+      <View></View>
+      
+      } */}
 
     </View>
 

@@ -15,7 +15,7 @@ const MaxiCards = ( {item, type, route, filtreVideos} ) => {
   const onPress= () => {
     // console.log("first", navigation)
 
-     navigation.navigate('Details', { item: item })
+     navigation.navigate('DetailsYoutube', { item: item })
 
   }
 
@@ -79,6 +79,7 @@ const styles = StyleSheet.create({
     width:105,
     marginBottom:5,
     justifyContent:'center',
+    height : 25,
   },
 
   videoscategory:{

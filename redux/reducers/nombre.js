@@ -1,16 +1,17 @@
 import { EDIT_LOGIN } from "../type";
 import { EDIT_NOMBRE } from "../type";
 
-// Initialisation de la valeur du State login
+// Initialisation de la valeur du State nombre
 
-const initStateLogin = false ;
+const initStateNombre = 0 ;
 
 // export default login
-export default function( state = initStateLogin, action ){
+export default function( state = initStateNombre, action ){
 
     switch( action.type ){
-        
-        case EDIT_LOGIN :{
+
+        case EDIT_NOMBRE :{
+            // return state + 1 ;
             return action.payload ;
         }
 

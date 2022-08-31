@@ -8,6 +8,7 @@ import Insta from './allApps/Insta';
 import ActionVerite from './allApps/ActionVerite';
 import Tuto from './allApps/TutoFlatList';
 import Details from './allApps/AppNews/components/Details';
+import DetailsYoutube from './allApps/youtube/components/DetailsYoutube';
 import Home from './allApps/youtube/components/Home';
 import Ecommerce from './allApps/E-commerce';
 // Importations Redux
@@ -17,6 +18,7 @@ import { Provider } from 'react-redux';
 const Stack = createNativeStackNavigator();
 
 const App = () => {
+  console.log(store)
   return (
     <View style={{flex:1}}>
     
@@ -35,13 +37,14 @@ const App = () => {
 
           {/* News app Screen */}
           <Stack.Screen name="NewsScreen" component={NewsScreen} />
+          <Stack.Screen name="Details" component={Details} />
           <Stack.Screen name="Insta" component={Insta} />
           <Stack.Screen name="AppTuto" component={Tuto} />
           <Stack.Screen name="AppEcommerce" component={Ecommerce} />
           {/* <Stack.Screen name="ActionVerite" component={ActionVerite} /> */}
 
           {/* YOUTUBE */}
-          <Stack.Screen name="Details" component={Details} />
+          <Stack.Screen name="DetailsYoutube" component={DetailsYoutube} />
           <Stack.Screen name="Home" component={Home} />
 
         </Stack.Navigator>

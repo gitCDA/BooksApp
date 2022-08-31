@@ -16,7 +16,8 @@ const Details = ( { route } ) => {
   return (
     <View>
 
-      <Header></Header>
+      <Header>
+      </Header>
       
       <Image
         style={styles.image}
