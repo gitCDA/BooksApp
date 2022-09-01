@@ -13,7 +13,7 @@ const Public = () => {
 
     <View>
 
-      <Text> Nombre : { nombre }</Text>
+      <Text> Connectez-vous </Text>
 
     </View>
 

@@ -4,6 +4,7 @@ import { useState } from 'react'
 import Icone from 'react-native-vector-icons/Ionicons'
 import { styles } from '../First/theme/style'
 import { useNavigation } from '@react-navigation/native'
+import firestore from '@react-native-firebase/firestore'
 
 const Tuto = () => {
 
@@ -17,12 +18,25 @@ const Tuto = () => {
 //   getNombres c'est le tableau en l'état
   const [getNombres, setNombres] = useState( [1,2,3,4,5,6,7,8,9,10] )
 
+  const readStagiaires = async () => {
 
-// Ajouter des nombres en fct° des précédents
-  const AddNombres = (  ) => { 
+    const user = await firestore().collection('stagiaires')
+    .doc('LPocmGlbJxB13wOU2Ba4').get() ;
+    console.log('user', user) ;
+  }
 
-    const tempNombres = [ ...getNombres, getNombres.length + 1 ]
-    setNombres( tempNombres )
+  
+  // Ajouter des nombres en fct° des précédents
+  const AddNombres = async () => {
+
+    await readStagiaires() ;
+    console.log(getNombres.length) ;
+    
+    const tempNombres = [ ...getNombres, getNombres.length + 1 ] ;
+
+    console.log("plus", tempNombres ) ;
+
+    setNombres( tempNombres ) ;
 
   }
   
@@ -52,9 +66,9 @@ const Tuto = () => {
         // Attribut une clé à chq éléments du tableau
         keyExtractor = { item => item }
 
-        // onEndReached = { AddNombres }
+        onEndReached = { AddNombres }
 
-        // onEndReachedThreshold = {0.2}
+        onEndReachedThreshold = {0.2}
     
     />
 

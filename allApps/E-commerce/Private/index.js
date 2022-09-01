@@ -32,7 +32,8 @@ const Private = () => {
 
     <View>
 
-      <Text>Private</Text>
+      <Text> Vous êtes connecté </Text>
+      <Text> Nombre : { nombre } </Text>
       <Button onPress={ pressDeconnexion } title='Déconnexion' />
       <Button onPress={ ajouter } title='Ajouter' />
       <Button onPress={ voir } title='Voir' />

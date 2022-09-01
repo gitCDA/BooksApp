@@ -3,11 +3,13 @@ import React from 'react'
 import Icone from 'react-native-vector-icons/Ionicons'
 import { useNavigation } from '@react-navigation/native';
 import { useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
+import { EDIT_NOMBRE } from '../../redux/type';
 
 const Insta = () => {
 
   // Récupérer la variable login qui est dans le state
-  const { login } = useSelector( state => state )
+  const { login, nombre } = useSelector( state => state )
   // const login = useSelector( state => state.login )
 
   const navigation = useNavigation() ;

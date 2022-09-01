@@ -7,6 +7,7 @@ import NewsScreen from './allApps/AppNews';
 import Insta from './allApps/Insta';
 import ActionVerite from './allApps/ActionVerite';
 import Tuto from './allApps/TutoFlatList';
+import TutoFireList from './allApps/TutoFireList';
 import Details from './allApps/AppNews/components/Details';
 import DetailsYoutube from './allApps/youtube/components/DetailsYoutube';
 import Home from './allApps/youtube/components/Home';
@@ -15,11 +16,31 @@ import Ecommerce from './allApps/E-commerce';
 import store from './redux/store';
 import { Provider } from 'react-redux';
 
+import auth from '@react-native-firebase/auth';
+
+
 const Stack = createNativeStackNavigator();
 
+
 const App = () => {
-  console.log(store)
+
+
+  auth()
+  .signInAnonymously()
+  .then(() => {
+    console.log('User signed in anonymously');
+  })
+  .catch(error => {
+    if (error.code === 'auth/operation-not-allowed') {
+      console.log('Enable anonymous in your firebase console.');
+    }
+
+    console.error(error);
+  });
+
+
   return (
+
     <View style={{flex:1}}>
     
     {/* Provider fournit les données qui sont dans le store pour 
@@ -40,8 +61,9 @@ const App = () => {
           <Stack.Screen name="Details" component={Details} />
           <Stack.Screen name="Insta" component={Insta} />
           <Stack.Screen name="AppTuto" component={Tuto} />
+          <Stack.Screen name="AppTutoFireList" component={TutoFireList} />
           <Stack.Screen name="AppEcommerce" component={Ecommerce} />
-          {/* <Stack.Screen name="ActionVerite" component={ActionVerite} /> */}
+          <Stack.Screen name="ActionVerite" component={ActionVerite} />
 
           {/* YOUTUBE */}
           <Stack.Screen name="DetailsYoutube" component={DetailsYoutube} />

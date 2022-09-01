@@ -18,5 +18,13 @@ export const dataApp = [
     { id : 5,
     titre : "You Tube",
     nomApp : "Home" },
+
+    { id : 6,
+    titre : "Action et Vérité",
+    nomApp : "ActionVerite" },
+
+    { id : 7,
+    titre : "App Tuto Fire List",
+    nomApp : "AppTutoFireList" },
       
 ] ;
