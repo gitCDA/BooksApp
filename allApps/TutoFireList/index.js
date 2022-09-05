@@ -43,8 +43,7 @@ const TutoFireList = () => {
 
   useEffect( () => {
 
-    firestore().collection( 'stagiaires' )
-    .onSnapshot( snapShot => {
+    firestore().collection( 'stagiaires' ).onSnapshot( snapShot => {
         // console.log(snapShot)
 
         let dataTemp = [] ;
@@ -83,7 +82,7 @@ const styles = StyleSheet.create({
   item: {
     backgroundColor: 'lime',
     // paddingHorizontal: 25,
-    paddingVertical: 0.5,
+    // paddingVertical: 0.5,
     marginVertical: 8,
     marginHorizontal: 15,
     borderRadius : 35,

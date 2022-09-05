@@ -3,7 +3,7 @@ import React from 'react'
 import { styles } from '../../First/theme/style'
 import { useNavigation } from '@react-navigation/native'
 
-const ItemNews = ( {item} ) => {
+const ItemNews = ( { item } ) => {
 
     const navigation = useNavigation();
 
@@ -18,7 +18,7 @@ const ItemNews = ( {item} ) => {
      style={ styles.app }
     >
 
-      {/* <View> */}
+      <View>
 
         <View style={ styles.viewImageNews }>
         <Image source={ { uri : item.image } } style={ styles.imageNews }>
@@ -28,7 +28,7 @@ const ItemNews = ( {item} ) => {
         
         <Text style={ styles.textNews }>{ item.title }</Text>
 
-      {/* </View> */}
+      </View>
 
     </TouchableOpacity>
 

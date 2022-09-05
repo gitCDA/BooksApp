@@ -20,14 +20,14 @@ const Insta = () => {
   }
 
   return (
-    <View>
-    <Icone name='md-arrow-back-circle' size={55} onPress={ openApp } />
 
     <View>
+    {/* <Icone name='md-arrow-back-circle' size={55} onPress={ openApp } />
+    <View> */}
 
       { login ? <Text>Est connecté</Text> :
                 <Text>N'est pas connecté</Text> }
-    </View>
+    {/* </View> */}
 
     </View>
   )

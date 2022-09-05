@@ -51,7 +51,7 @@ const App = () => {
           
         <Stack.Navigator initialRouteName="First"
           // Pour cacher le header qui est par défaut
-          screenOptions={{headerShown: false}}>
+          >
 
 
           <Stack.Screen name="First" component={First} />
@@ -62,12 +62,14 @@ const App = () => {
           <Stack.Screen name="Insta" component={Insta} />
           <Stack.Screen name="AppTuto" component={Tuto} />
           <Stack.Screen name="AppTutoFireList" component={TutoFireList} />
-          <Stack.Screen name="AppEcommerce" component={Ecommerce} />
+
+          <Stack.Screen name="AppEcommerce" options={{headerShown: false}} component={Ecommerce} />
+
           <Stack.Screen name="ActionVerite" component={ActionVerite} />
 
           {/* YOUTUBE */}
-          <Stack.Screen name="DetailsYoutube" component={DetailsYoutube} />
-          <Stack.Screen name="Home" component={Home} />
+          <Stack.Screen name="DetailsYoutube" options={{headerShown: false}} component={DetailsYoutube} />
+          <Stack.Screen name="Home" options={{headerShown: false}} component={Home} />
 
         </Stack.Navigator>
 

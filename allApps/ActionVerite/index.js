@@ -16,7 +16,7 @@ const ActionVerite = () => {
     return (
       <View>
 
-        <Icone name='md-arrow-back-circle' size={55} onPress={ openApp } />
+        {/* <Icone name='md-arrow-back-circle' size={55} onPress={ openApp } /> */}
         <Text>ActionVerite</Text>
 
     </View>

@@ -45,12 +45,12 @@ const Tuto = () => {
 
     <View>
 
-    <View style= { styles.header }>
+    {/* <View style= { styles.header }>
         
     <Icone style= { styles.icone }
     name='md-arrow-back-circle' size={55} onPress={ openApp } />
 
-  </View>
+    </View> */}
 
     <FlatList
         

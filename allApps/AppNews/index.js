@@ -82,14 +82,14 @@ const NewsScreen = () => {
   return (
     <View>
 
-      <View style= { styles.header }>
+      {/* <View style= { styles.header }>
         
         <Icone style= { styles.icone }
         name='md-arrow-back-circle' size={55} onPress={ openApp } />
 
         <Text style= { styles.textHeader }>Liste des News</Text>
 
-        </View>
+        </View> */}
 
         <FlatList 
         contentContainerStyle = { styles.flatlist }
