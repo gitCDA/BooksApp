@@ -22,7 +22,7 @@ const Details = ( { route } ) => {
       <Text style={ styles.textNewsDetails }>{ item.publishedAt }</Text>
       </View>
 
-      <Text style={ styles.textSourceDetails }>{ item.source }</Text>
+      {/* <Text style={ styles.textSourceDetails }>{ item.source }</Text> */}
 
 
       <Text style={ styles.textDescriptionDetails }>{ item.description }</Text>
