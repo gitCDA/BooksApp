@@ -11,9 +11,15 @@ export default function ( state = initStateArticles , action ) {
         
         // return nextState ;
 
+        if ( state.find( item => item.id == action.payload.id ) == undefined ) {
         // Permet d'ajouter une caté avec le destructuring
         return [ ...state, action.payload ] ;
         // action.payload stocké dans le dispatch
+        } else {
+
+            return state
+
+        }
         
     } else {
         
