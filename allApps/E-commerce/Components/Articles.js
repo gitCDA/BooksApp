@@ -14,7 +14,7 @@ import { useSelector } from 'react-redux'
 const RenderArticles = ( {articles} ) => {
     
     return (
-        <TouchableOpacity style={ styles.touchArticles } >
+        <TouchableOpacity style={ styles.touchArticle } >
             <Text style={ styles.textflat } >
                 { articles.nom }
             </Text>
@@ -25,8 +25,8 @@ const RenderArticles = ( {articles} ) => {
 
 const Articles = () => {
 
-  const { dataCategorie } = useSelector( state => state ) ;
-  console.log( dataCategorie )
+  const { dataArticle } = useSelector( state => state ) ;
+  console.log( dataArticle )
     
   return (
 
@@ -36,7 +36,11 @@ const Articles = () => {
 
       <FlatList
 
-        data={ dataCategorie }
+        data={ dataArticle }
+        
+        horizontal={false}
+
+        numColumns = {2}
 
         renderItem = { ( {item} ) =>
         // <Text style={ styles.textflat } > { item.nom } </Text>
@@ -47,8 +51,6 @@ const Articles = () => {
 
         // keyExtractor = { item => item.id }
         keyExtractor = { (item, index) => 'key' + index}
-
-        horizontal
         
       />
 
@@ -82,16 +84,16 @@ const styles = StyleSheet.create({
         alignSelf : 'center'
     },
     
-    touchCategorie: {
-        backgroundColor: 'blue',
-        marginRight: 10,
-        borderRadius: 25,
+    touchArticle: {
+        backgroundColor: 'orange',
+        margin: 10,
+        borderRadius: 10,
         justifyContent:'center',
-        height: 35,
+        height: 200,
         // marginTop : 5,
     },
 
-    textCategorie: {
+    textArticle: {
         fontSize : 15,
         color:"#fff",
         fontWeight:"500",

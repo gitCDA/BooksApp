@@ -11,9 +11,17 @@ export default function ( state = initStateCategories , action ) {
         
         // return nextState ;
 
-        // Permet d'ajouter une caté avec le destructuring
-        return [ ...state, action.payload ] ;
-        // action.payload stocké dans le dispatch
+        if( state.find( item => item.id == action.payload.id ) == undefined ) {
+        console.log( state.find( item => item.id == action.payload.id ) )
+
+            // Permet d'ajouter une caté avec le destructuring
+            return [ ...state, action.payload ] ;
+            // action.payload stocké dans le dispatch
+        }else{
+
+            return state
+            
+        }
         
     } else {
         

@@ -8,52 +8,87 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Home from './Screen/Home';
 import Settings from './Screen/Settings' ;
 import { FirebaseContext } from '../../firebaseContext' ;
-import { addCategorie } from '../../redux/action';
+import { addArticle, addCategorie } from '../../redux/action';
 
 // Bottom Tabs création de fct° au lieu de constantes
 const Tab = createBottomTabNavigator();
 
+
   const App = () => {
     
   const firebase = useContext( FirebaseContext ) ;
-
   const dispatch = useDispatch() ;
+
+
 
 
   const initCategories = async () => {
 
-    const categories = await firebase.getCategories() ;
+      const categories = await firebase.getCategories() ;
 
 
-    if(!categories.empty){
+      if(!categories.empty){
 
-      console.log("pas vide") ;
+        console.log("pas vide") ;
+        
+        categories.forEach( categorieData => {
+
+          const tempCategorie = {
+            id: categorieData.id,
+    // nom: categorieData.data().nom
+    // à la suite plus simple destructuré pour récupérer toutes les données d'1 coup
+            ...categorieData.data()
+          }
+
+          dispatch( addCategorie(tempCategorie) )
+
+          console.log( tempCategorie )
+
+        })
       
-      categories.forEach( categorieData => {
+      }
+      // console.log(categories.empty)
+  }
 
-        const tempCategorie = {
-          id: categorieData.id,
-  // nom: categorieData.data().nom
-  // à la suite plus simple destructuré pour récupérer toutes les données d'1 coup
-          ...categorieData.data()
-        }
 
-        dispatch( addCategorie(tempCategorie) )
 
-        console.log( tempCategorie )
+  const initArticles = async () => {
 
-      })
-    
-    }
+      const articles = await firebase.getArticles() ;
 
-    // console.log(categories.empty)
-  
+
+      if(!articles.empty){
+
+        console.log("pas vide") ;
+        
+        articles.forEach( articleData => {
+
+          dispatch( addArticle(
+
+            {id: articleData.id,
+            ...articleData.data()}
+
+          ))
+
+          console.log(
+            {id: articleData.id,
+              ...articleData.data()}
+          )
+
+        })
+      
+      }
+      // console.log(articles.empty)
   }
   
+
+
+
 
   useEffect( () => {
 
     initCategories() ;
+    initArticles() ;
 
   }, [])
 

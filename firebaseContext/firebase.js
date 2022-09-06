@@ -17,6 +17,9 @@ class Firebase {
     //     return this.firestore.collection("Categories")
     // }
 
+    // Récupère les articles
+    getArticles = () => this.firestore.collection('Articles').get() ;
+
 }
 
 export default Firebase
