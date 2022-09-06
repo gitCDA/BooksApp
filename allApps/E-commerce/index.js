@@ -2,12 +2,13 @@ import { View, Text } from 'react-native';
 import React, { useContext, useEffect } from 'react';
 import Connexion from './Public/Connexion';
 import Private from './Private';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import Public from './Public';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Home from './Screen/Home';
 import Settings from './Screen/Settings' ;
 import { FirebaseContext } from '../../firebaseContext' ;
+import { addCategorie } from '../../redux/action';
 
 // Bottom Tabs création de fct° au lieu de constantes
 const Tab = createBottomTabNavigator();
@@ -15,7 +16,9 @@ const Tab = createBottomTabNavigator();
   const App = () => {
     
   const firebase = useContext( FirebaseContext ) ;
-  
+
+  const dispatch = useDispatch() ;
+
 
   const initCategories = async () => {
 
@@ -28,7 +31,16 @@ const Tab = createBottomTabNavigator();
       
       categories.forEach( categorieData => {
 
-        console.log( categorieData.data() )
+        const tempCategorie = {
+          id: categorieData.id,
+  // nom: categorieData.data().nom
+  // à la suite plus simple destructuré pour récupérer toutes les données d'1 coup
+          ...categorieData.data()
+        }
+
+        dispatch( addCategorie(tempCategorie) )
+
+        console.log( tempCategorie )
 
       })
     

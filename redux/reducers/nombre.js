@@ -5,7 +5,7 @@ import { EDIT_NOMBRE } from "../type";
 
 const initStateNombre = 0 ;
 
-// export default login
+// export default nombre
 export default function( state = initStateNombre, action ){
 
     switch( action.type ){

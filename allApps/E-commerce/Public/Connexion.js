@@ -8,6 +8,7 @@ const Connexion = () => {
   const dispatch = useDispatch() ;
   
   const pressConnexion = () => {
+    // Changer valeur State
     dispatch( editLogin( true ) ) ;
     console.log("connexion") ;
    } ;

@@ -11,19 +11,19 @@ import { useSelector } from 'react-redux'
 // ]
 
 
-const RenderCategories = ( {categorie} ) => {
+const RenderArticles = ( {articles} ) => {
     
     return (
-        <TouchableOpacity style={ styles.touchCategorie } >
+        <TouchableOpacity style={ styles.touchArticles } >
             <Text style={ styles.textflat } >
-                { categorie.nom }
+                { articles.nom }
             </Text>
         </TouchableOpacity>
     )
     
 }
 
-const Categories = () => {
+const Articles = () => {
 
   const { dataCategorie } = useSelector( state => state ) ;
   console.log( dataCategorie )
@@ -32,7 +32,7 @@ const Categories = () => {
 
     <View style={ styles.content } >
 
-      <Text style={ styles.title } >Categories</Text>
+      <Text style={ styles.title } >Articles</Text>
 
       <FlatList
 
@@ -41,7 +41,7 @@ const Categories = () => {
         renderItem = { ( {item} ) =>
         // <Text style={ styles.textflat } > { item.nom } </Text>
 
-        <RenderCategories categorie={item} />
+        <RenderArticles articles={item} />
 
         }
 
@@ -56,7 +56,7 @@ const Categories = () => {
   )
 }
 
-export default Categories
+export default Articles
 
 const styles = StyleSheet.create({
 
