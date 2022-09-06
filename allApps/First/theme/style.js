@@ -20,7 +20,7 @@ export const styles = StyleSheet.create({
   
     app: {
       paddingHorizontal:15,
-      marginBottom:15,
+      marginBottom:10,
       marginHorizontal:10,
       backgroundColor : 'rgba(70, 155, 245, 0.75)',
       borderRadius : 15,
@@ -52,10 +52,10 @@ export const styles = StyleSheet.create({
     },
   
     imageNews: {
+      //   marginTop : 15,
+      //   width : 75,
       height : 75,
-    //   width : 75,
       aspectRatio : 1,
-    //   marginTop : 15,
       borderRadius : 55,
       borderWidth : 0.85,
       borderColor : 'black'

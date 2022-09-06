@@ -5,7 +5,7 @@ import { styles } from '../../First/theme/style'
 const Details = ( { route } ) => {
 
     // Pour récupérer les données à partir de ItemNews
-        const item = route.params;
+        const {item} = route.params;
         console.log( item )
 
   return (
@@ -14,7 +14,7 @@ const Details = ( { route } ) => {
       
       <Image
           style={styles.imageNews2}
-          source={ item.image }
+          source={ { uri : item.image } }
       />
 
       <View style={ styles.viewTextDetails1 }>

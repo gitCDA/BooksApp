@@ -42,6 +42,7 @@ const Categories = () => {
         }
 
         keyExtractor = { item => item.id }
+        // keyExtractor = { (item, index) => 'key' + index}
 
         horizontal
         

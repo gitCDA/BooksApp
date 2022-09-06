@@ -43,7 +43,7 @@ const App = () => {
 
     <View style={{flex:1}}>
     
-    {/* Provider fournit les données qui sont dans le store pour 
+    {/* Provider fournit les données qui sont dans le store du reducer pour 
     avoir accès aux données tout le temps */}
     <Provider store={store}>
 
