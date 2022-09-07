@@ -9,10 +9,23 @@ import Home from './Screen/Home';
 import Settings from './Screen/Settings' ;
 import { FirebaseContext } from '../../firebaseContext' ;
 import { addArticle, addCategorie } from '../../redux/action';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import DetailsArticle from './Screen/DetailsArticle';
 
 // Bottom Tabs création de fct° au lieu de constantes
 const Tab = createBottomTabNavigator();
 
+// On le réutilise comme dans App voir const Acceuil
+const Stack = createNativeStackNavigator() ;
+
+const Acceuil = () => {
+  return (
+    <Stack.Navigator >
+      <Stack.Screen options={{ headerShown: false }} name='Acceuil' component={ Home } />
+      <Stack.Screen name='DetailsArticle' component={ DetailsArticle} />
+    </Stack.Navigator>
+  )
+}
 
   const App = () => {
     
@@ -24,14 +37,16 @@ const Tab = createBottomTabNavigator();
 
   const initCategories = async () => {
 
+    // Récupère dans Firebase et le code continue dès que c'est fini
       const categories = await firebase.getCategories() ;
 
-
+      
       if(!categories.empty){
-
+        
         console.log("pas vide") ;
         
         categories.forEach( categorieData => {
+          console.log(categorieData.id)
 
           const tempCategorie = {
             id: categorieData.id,
@@ -96,8 +111,8 @@ const Tab = createBottomTabNavigator();
   return (
 
     <Tab.Navigator screenOptions={{headerShown: false}} >
-    <Tab.Screen name="Acceuil" component={Home} />
-    <Tab.Screen name="Mon Compte" component={Settings} />
+      <Tab.Screen name="Acceuil" component={Acceuil} />
+      <Tab.Screen name="Mon Compte" component={Settings} />
     </Tab.Navigator>
 
   )

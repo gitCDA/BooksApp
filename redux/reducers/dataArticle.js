@@ -1,4 +1,5 @@
 import { ADD_ARTICLE } from "../type";
+import { existItem } from "../../common/fonctions";
 
 // Initialisation de la valeur du State dans le Store
 
@@ -9,17 +10,8 @@ export default function ( state = initStateArticles , action ) {
 
     if ( action.type == ADD_ARTICLE ) {
         
-        // return nextState ;
-
-        if ( state.find( item => item.id == action.payload.id ) == undefined ) {
-        // Permet d'ajouter une caté avec le destructuring
-        return [ ...state, action.payload ] ;
-        // action.payload stocké dans le dispatch
-        } else {
-
-            return state
-
-        }
+        // Voir détails dans dataCategorie
+        return !existItem( state, action.payload.id ) ? [ ...state, action.payload ] : state ;
         
     } else {
         

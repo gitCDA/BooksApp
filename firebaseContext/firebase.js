@@ -1,6 +1,7 @@
 import firestore from "@react-native-firebase/firestore";
 
-// Début POO avec JS
+// Début POO avec JS 
+// (voir index à la racine du projet pour l'envoyer dans toue l'app)
 class Firebase {
 
     firestore ;
@@ -19,6 +20,8 @@ class Firebase {
 
     // Récupère les articles
     getArticles = () => this.firestore.collection('Articles').get() ;
+
+    getArticleById = (id) => this.firestore.collection('Articles').doc(id).get() ;
 
 }
 

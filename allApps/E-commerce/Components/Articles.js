@@ -1,6 +1,8 @@
 import { StyleSheet, Text, View, FlatList, TouchableOpacity } from 'react-native'
 import React from 'react'
 import { useSelector } from 'react-redux'
+import { useNavigation } from '@react-navigation/native'
+import DetailsArticle from '../Screen/DetailsArticle'
 
 
 // const data = [ 
@@ -10,11 +12,16 @@ import { useSelector } from 'react-redux'
 //     { id:4, nom:"cat4" },
 // ]
 
-
 const RenderArticles = ( {articles} ) => {
+
+    const navigation = useNavigation() ;
+
+    const AllerVersDetails = () => {
+        navigation.navigate( 'DetailsArticle', { id: articles.id } )
+    }
     
     return (
-        <TouchableOpacity style={ styles.touchArticle } >
+        <TouchableOpacity style={ styles.touchArticle } onPress={ AllerVersDetails } >
             <Text style={ styles.textflat } >
                 { articles.nom }
             </Text>
@@ -25,6 +32,7 @@ const RenderArticles = ( {articles} ) => {
 
 const Articles = () => {
 
+//   Récupère les datas dans le state
   const { dataArticle } = useSelector( state => state ) ;
   console.log( dataArticle )
     
