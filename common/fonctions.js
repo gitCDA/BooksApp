@@ -1,6 +1,4 @@
 export const existItem = ( data = [], id = '' ) => {
-
-    // existItem est différent d'undefined donc vrai
-    return data.find( item => item.id ==id ) != undefined ;
-
+    // retourne tous les éléments qui ont 1 id différent
+    return data.find( item => item.id == id ) != undefined ;
 }

@@ -55,6 +55,8 @@ const Articles = () => {
 
         <RenderArticles articles={item} />
 
+        // showsHorizontalScrollIndicator={false}
+
         }
 
         // keyExtractor = { item => item.id }

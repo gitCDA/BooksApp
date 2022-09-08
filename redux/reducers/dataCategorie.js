@@ -10,7 +10,7 @@ export default function ( state = initStateCategories , action ) {
 
     if ( action.type == ADD_CATEGORIE ) {
         
-        // return nextState ;
+        // return State actualisé ;
 
         return !existItem( state, action.payload.id ) ? [ ...state, action.payload ] : state ;
 
@@ -29,6 +29,7 @@ export default function ( state = initStateCategories , action ) {
         
     } else {
         
+        // retourne State initial
         return state ;
 
     }
