@@ -45,20 +45,18 @@ const Articles = () => {
       <FlatList
 
         data={ dataArticle }
-        
+
         horizontal={false}
 
         numColumns = {2}
 
         renderItem = { ( {item} ) =>
         // <Text style={ styles.textflat } > { item.nom } </Text>
-
         <RenderArticles articles={item} />
-
-        // showsHorizontalScrollIndicator={false}
-
         }
 
+        showsHorizontalScrollIndicator={false}
+        
         // keyExtractor = { item => item.id }
         keyExtractor = { (item, index) => 'key' + index}
         

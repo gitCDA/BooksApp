@@ -22,7 +22,7 @@ const Acceuil = () => {
   return (
     <Stack.Navigator >
       <Stack.Screen options={{ headerShown: false }} name='Acceuil' component={ Home } />
-      <Stack.Screen name='DetailsArticle' component={ DetailsArticle} />
+      <Stack.Screen options={{ headerShown: false }} name='DetailsArticle' component={ DetailsArticle} />
     </Stack.Navigator>
   )
 }

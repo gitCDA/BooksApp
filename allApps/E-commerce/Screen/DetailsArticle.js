@@ -1,6 +1,9 @@
-import { ActivityIndicator, StyleSheet, Text, View } from 'react-native'
+import { ActivityIndicator, Text, View } from 'react-native'
 import React, { useContext, useState, useEffect } from 'react'
 import { FirebaseContext } from '../../../firebaseContext';
+import Header from '../Components/Header';
+import { styled } from '../theme/styleDetails';
+import { Image } from '@rneui/base';
 
 const DetailsArticle = ( {route} ) => {
 
@@ -32,7 +35,7 @@ const DetailsArticle = ( {route} ) => {
         setArticles( rqArticles.data() ) ;
         setLoad( false ) ;
 
-      }, 500 )
+      }, 0 )
 
       console.log( rqArticles.data() ) ;
 
@@ -49,7 +52,7 @@ const DetailsArticle = ( {route} ) => {
 
   return (
 
-    <View>
+    <View style={styled.details}>
  
       {/* <Text> {articles.nom} </Text>
       <Text> {articles.prix} </Text>
@@ -63,8 +66,43 @@ const DetailsArticle = ( {route} ) => {
           :
           
           <View>
-          <Text> {id} </Text>
-          <Text> {articles.nom} </Text>
+
+            <Header/>
+
+            <View style={styled.top}>
+              
+              <View style={styled.viewimagegch} >
+
+                <Image style={styled.hautimagegch} source={ { uri : articles.image } } />
+
+              </View>
+
+
+
+
+
+
+
+
+
+
+              <View></View>
+
+            </View>
+
+
+
+
+
+            <View style={styled.bottom}>
+            </View>
+
+
+            <View>
+              <Text> {id} </Text>
+              <Text> {articles.nom} </Text>
+            </View>
+            
           </View>
         
       }
@@ -75,5 +113,3 @@ const DetailsArticle = ( {route} ) => {
 }
 
 export default DetailsArticle
-
-const styles = StyleSheet.create({})
