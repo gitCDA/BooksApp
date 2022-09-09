@@ -3,6 +3,10 @@ import { EDIT_NOMBRE } from "./type";
 import { ADD_CATEGORIE } from "./type";
 import { ADD_ARTICLE } from "./type";
 
+import { ADD_PANIER } from "./type";
+import { REMOVE_PANIER } from "./type";
+import { REMOVE_ONE_PANIER } from "./type";
+
 export const editLogin = (login) => ( {
 
     type : EDIT_LOGIN ,
@@ -28,5 +32,28 @@ export const addArticle = (article) => ( {
 
     type : ADD_ARTICLE ,
     payload : article ,
+
+} )
+
+
+// Gestion de mon Panier
+export const addPanier = (article) => ( {
+
+    type : ADD_PANIER ,
+    payload : article ,
+
+} )
+
+export const removePanier = () => ( {
+
+    type : REMOVE_PANIER ,
+    payload : [] ,
+
+} )
+
+export const removeOnePanier = ( panier ) => ( {
+
+    type : REMOVE_ONE_PANIER ,
+    payload : panier ,
 
 } )

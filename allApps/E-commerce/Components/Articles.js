@@ -2,7 +2,7 @@ import { StyleSheet, Text, View, FlatList, TouchableOpacity } from 'react-native
 import React from 'react'
 import { useSelector } from 'react-redux'
 import { useNavigation } from '@react-navigation/native'
-import DetailsArticle from '../Screen/DetailsArticle'
+import Detail from '../Screen/Detail'
 
 
 // const data = [ 

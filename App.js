@@ -17,6 +17,7 @@ import store from './redux/store';
 import { Provider } from 'react-redux';
 
 import auth from '@react-native-firebase/auth';
+import Header from './allApps/E-commerce/Components/Header';
 
 
 const Stack = createNativeStackNavigator();

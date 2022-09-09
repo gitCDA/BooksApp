@@ -8,4 +8,7 @@ import dataCategorie from "./dataCategorie";
 
 import dataArticle from "./dataArticle";
 
-export default combineReducers( { login, nombre, dataCategorie, dataArticle } ) ;
+import dataPanier from "./dataPanier";
+
+export default combineReducers( { login, nombre, dataCategorie, dataArticle,
+dataPanier } ) ;

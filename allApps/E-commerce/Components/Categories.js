@@ -2,7 +2,6 @@ import { StyleSheet, Text, View, FlatList, TouchableOpacity } from 'react-native
 import React from 'react'
 import { useSelector } from 'react-redux'
 
-
 // const data = [ 
 //     { id:1, nom:"cat1" },
 //     { id:2, nom:"cat2" },

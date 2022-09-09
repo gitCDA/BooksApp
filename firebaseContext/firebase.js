@@ -20,7 +20,8 @@ class Firebase {
 
     // Récupère les articles
     getArticles = () => this.firestore.collection('Articles').get() ;
-
+    
+    // Récupère les articles par leur id
     getArticleById = (id) => this.firestore.collection('Articles').doc(id).get() ;
 
 }

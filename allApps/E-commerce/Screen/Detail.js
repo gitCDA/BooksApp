@@ -4,8 +4,9 @@ import { FirebaseContext } from '../../../firebaseContext';
 import Header from '../Components/Header';
 import { styled } from '../theme/styleDetails';
 import { Image } from '@rneui/base';
+import ArticleDetail from '../Components/ArticleDetail';
 
-const DetailsArticle = ( {route} ) => {
+const Detail = ( {route} ) => {
 
     // Pour récupérer les données dans détails
     const {id} = route.params ;
@@ -37,7 +38,8 @@ const DetailsArticle = ( {route} ) => {
 
       }, 0 )
 
-      console.log( rqArticles.data() ) ;
+      console.log( "greiperpger", articles ) ;
+      // console.log( "greiperpger", rqArticles.data() ) ;
 
     }
 
@@ -54,57 +56,16 @@ const DetailsArticle = ( {route} ) => {
 
     <View style={styled.details}>
  
-      {/* <Text> {articles.nom} </Text>
-      <Text> {articles.prix} </Text>
-      <Text> {articles.description} </Text>
-      <Text> {articles.état} </Text> */}
+
 
       { ( Load == true ) ? <ActivityIndicator/> :
 
-          ( articles == null ) ? <NoArticle/>
+        ( articles == null ) ? <NoArticle/>
 
-          :
-          
-          <View>
-
-            <Header/>
-
-            <View style={styled.top}>
-              
-              <View style={styled.viewimagegch} >
-
-                <Image style={styled.hautimagegch} source={ { uri : articles.image } } />
-
-              </View>
-
-
-
-
-
-
-
-
-
-
-              <View></View>
-
-            </View>
-
-
-
-
-
-            <View style={styled.bottom}>
-            </View>
-
-
-            <View>
-              <Text> {id} </Text>
-              <Text> {articles.nom} </Text>
-            </View>
-            
-          </View>
+        :
         
+        <ArticleDetail articles={articles}/>
+
       }
 
     </View>
@@ -112,4 +73,4 @@ const DetailsArticle = ( {route} ) => {
   )
 }
 
-export default DetailsArticle
+export default Detail

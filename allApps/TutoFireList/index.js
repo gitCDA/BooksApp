@@ -43,6 +43,7 @@ const TutoFireList = () => {
 
   useEffect( () => {
 
+    // Capture ts les chgts dans Firebase
     firestore().collection( 'stagiaires' ).onSnapshot( snapShot => {
         // console.log(snapShot)
 

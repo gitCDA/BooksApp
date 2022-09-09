@@ -25,7 +25,7 @@ const Header = () => {
       <Image
       style={styles.itemimage}
       transition={true}
-      transitionDuration={5000}
+      transitionDuration={3500}
       source={ require('../../youtube/images/logo.jpg') }
       />
       

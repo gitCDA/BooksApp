@@ -10,10 +10,26 @@ import Settings from './Screen/Settings' ;
 import { FirebaseContext } from '../../firebaseContext' ;
 import { addArticle, addCategorie } from '../../redux/action';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import DetailsArticle from './Screen/DetailsArticle';
+import Detail from './Screen/Detail';
+import Panier from './Screen/Panier';
+import Icon from 'react-native-vector-icons/Feather';
 
 // Bottom Tabs création de fct° au lieu de constantes
-const Tab = createBottomTabNavigator();
+const Tab = createBottomTabNavigator(
+
+  // { Panier: {
+  //     tabBarIcon: () => {
+  //       return (
+  //         <Icon
+  //           name="watch"
+  //           size={24}
+  //           color="black"
+  //         />
+  //       );
+  //     },
+  //   },
+  // }
+);
 
 // On le réutilise comme dans App voir const Acceuil
 const Stack = createNativeStackNavigator() ;
@@ -22,7 +38,7 @@ const Acceuil = () => {
   return (
     <Stack.Navigator >
       <Stack.Screen options={{ headerShown: false }} name='Home' component={ Home } />
-      <Stack.Screen options={{ headerShown: false }} name='DetailsArticle' component={ DetailsArticle} />
+      <Stack.Screen options={{ headerShown: false }} name='DetailsArticle' component={ Detail} />
     </Stack.Navigator>
   )
 }
@@ -112,6 +128,7 @@ const Acceuil = () => {
 
     <Tab.Navigator screenOptions={{headerShown: false}} >
       <Tab.Screen name="Acceuil" component={Acceuil} />
+      <Tab.Screen name="Panier" component={ Panier } />
       <Tab.Screen name="Mon Compte" component={Settings} />
     </Tab.Navigator>
 

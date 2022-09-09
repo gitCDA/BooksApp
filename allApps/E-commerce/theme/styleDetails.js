@@ -10,7 +10,7 @@ export const styled = StyleSheet.create({
     },
 
     top:{
-        flex:1,
+        // flex:1,
     },
     
     viewimagegch:{
