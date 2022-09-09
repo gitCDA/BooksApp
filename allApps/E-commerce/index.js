@@ -21,7 +21,7 @@ const Stack = createNativeStackNavigator() ;
 const Acceuil = () => {
   return (
     <Stack.Navigator >
-      <Stack.Screen options={{ headerShown: false }} name='Acceuil' component={ Home } />
+      <Stack.Screen options={{ headerShown: false }} name='Home' component={ Home } />
       <Stack.Screen options={{ headerShown: false }} name='DetailsArticle' component={ DetailsArticle} />
     </Stack.Navigator>
   )
