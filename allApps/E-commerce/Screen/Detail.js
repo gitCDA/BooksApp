@@ -2,7 +2,7 @@ import { ActivityIndicator, Text, View } from 'react-native'
 import React, { useContext, useState, useEffect } from 'react'
 import { FirebaseContext } from '../../../firebaseContext';
 import Header from '../Components/Header';
-import { styled } from '../theme/styleDetails';
+import { styles } from '../../../theme/ecommerce/styles';
 import { Image } from '@rneui/base';
 import ArticleDetail from '../Components/ArticleDetail';
 
@@ -49,12 +49,11 @@ const Detail = ( {route} ) => {
     
     }, [] )
     
-
     console.log( id )
 
   return (
 
-    <View style={styled.details}>
+    <View style={ styles.details }>
  
 
 

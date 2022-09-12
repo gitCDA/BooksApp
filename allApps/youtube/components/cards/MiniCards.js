@@ -10,7 +10,7 @@ const MiniCards = ( {item} ) => {
   const onPress= () => {
         
     // console.log("first", navigation)
-     navigation.navigate('Details', {
+     navigation.navigate('DetailsYoutube', {
       // item: item
       item
     })
@@ -27,7 +27,8 @@ const MiniCards = ( {item} ) => {
 
         <ImageBackground style={styles.card}
           imageStyle={{ borderTopLeftRadius:10, borderTopRightRadius:10 }}
-          source={ item.image }>
+          source={ item.image }
+          >
         </ImageBackground>
 
 

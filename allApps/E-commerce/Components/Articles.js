@@ -3,6 +3,7 @@ import React from 'react'
 import { useSelector } from 'react-redux'
 import { useNavigation } from '@react-navigation/native'
 import Detail from '../Screen/Detail'
+import { styles } from '../../../theme/ecommerce/styles'
 
 
 // const data = [ 
@@ -21,10 +22,13 @@ const RenderArticles = ( {articles} ) => {
     }
     
     return (
-        <TouchableOpacity style={ styles.touchArticle } onPress={ AllerVersDetails } >
-            <Text style={ styles.textflat } >
+        <TouchableOpacity style={ styles.touchArticle }
+        onPress={ AllerVersDetails }
+        >
+            <Text style={ styles.textArticle } >
                 { articles.nom }
             </Text>
+            
         </TouchableOpacity>
     )
     
@@ -38,9 +42,9 @@ const Articles = () => {
     
   return (
 
-    <View style={ styles.content } >
+    <View style={ styles.contentArticle } >
 
-      <Text style={ styles.title } >Articles</Text>
+      <Text style={ styles.titleArticle } >Articles</Text>
 
       <FlatList
 
@@ -67,44 +71,3 @@ const Articles = () => {
 }
 
 export default Articles
-
-const styles = StyleSheet.create({
-
-    content: {
-        // flex : 1,
-        // height : 100,
-        width : '100%',
-    },
-    
-    title: {
-        fontSize : 25,
-        fontWeight : '500',
-        marginBottom: 5,
-    },
-    
-    textflat: {
-        // backgroundColor : 'red',
-        color:"#fff",
-        marginLeft : 5,
-        width : 105,
-        textAlign:'center',
-        borderRadius: 25,
-        alignSelf : 'center'
-    },
-    
-    touchArticle: {
-        backgroundColor: 'orange',
-        margin: 10,
-        borderRadius: 10,
-        justifyContent:'center',
-        height: 200,
-        // marginTop : 5,
-    },
-
-    textArticle: {
-        fontSize : 15,
-        color:"#fff",
-        fontWeight:"500",
-    }
-
-})

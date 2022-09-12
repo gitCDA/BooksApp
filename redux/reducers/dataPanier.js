@@ -1,6 +1,5 @@
-import { ADD_ARTICLE } from "../type";
 import { ADD_PANIER, REMOVE_PANIER, REMOVE_ONE_PANIER } from "../type";
-import { existItfjdaem } from "../../common/fonctions";
+import { existItem } from "../../common/fonctions";
 
 // Initialisation de la valeur du State dans le Store
 
@@ -22,8 +21,9 @@ export default function ( state = initStatePanier , action ) {
         // 1- Rechercher la posit° de l'élément
         // 2- Supprimer l'élément dans le tableau
         
-        // return state.filter( item => item.id != action.payload.id ) ;
-        return state.splice( action.payload, 1 ) ;
+        console.log('action.payload.id', action.payload ) ;
+        return state.filter( item => item != action.payload ) ;
+        // return state.splice( action.payload, 1 ) ;
 
     } else {
         

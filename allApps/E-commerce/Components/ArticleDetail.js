@@ -1,11 +1,11 @@
 import Header from './Header'
-import { styled } from '../theme/styleDetails';
 import { ActivityIndicator, Button, Text, View } from 'react-native'
 import React, { useContext, useState, useEffect } from 'react'
 import { FirebaseContext } from '../../../firebaseContext';
 import { Image } from '@rneui/base';
 import { useDispatch } from 'react-redux';
 import { addPanier } from '../../../redux/action';
+import { styles } from '../../../theme/ecommerce/styles';
 
 const ArticleDetail = ( {articles} ) => {
 
@@ -24,11 +24,11 @@ const ArticleDetail = ( {articles} ) => {
     <Header/>
 
 
-    <View style={styled.top}>
+    <View style={styles.topDetails}>
       
-      <View style={styled.viewimagegch} >
+      <View style={styles.viewimagegchDetails} >
 
-        <Image style={styled.hautimagegch} source={ { uri : articles.image } } />
+        <Image style={styles.hautimagegchDetails} source={ { uri : articles.image } } />
         <Button
         title='Ajouter au panier'
         onPress={ ajouter }
@@ -48,13 +48,13 @@ const ArticleDetail = ( {articles} ) => {
 
 
 
-    <View style={styled.bottom}>
+    <View style={styles.bottomDetails}>
     </View>
 
     
     <View>
-      <Text> {id} </Text>
-      <Text> {articles.nom} </Text>
+      <Text> { articles.id } </Text>
+      <Text> { articles.nom } </Text>
     </View>
    
     
