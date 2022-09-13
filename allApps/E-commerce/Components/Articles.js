@@ -22,7 +22,8 @@ const RenderArticles = ( {articles} ) => {
     }
     
     return (
-        <TouchableOpacity style={ styles.touchArticle }
+        <TouchableOpacity
+        style={ styles.touchArticle }
         onPress={ AllerVersDetails }
         >
             <Text style={ styles.textArticle } >
@@ -42,29 +43,33 @@ const Articles = () => {
     
   return (
 
-    <View style={ styles.contentArticle } >
+    <View>
 
       <Text style={ styles.titleArticle } >Articles</Text>
 
-      <FlatList
+      <View style={ styles.contentArticle }>
 
-        data={ dataArticle }
+        <FlatList
 
-        horizontal={false}
+          data={ dataArticle }
 
-        numColumns = {2}
+          horizontal={false}
 
-        renderItem = { ( {item} ) =>
-        // <Text style={ styles.textflat } > { item.nom } </Text>
-        <RenderArticles articles={item} />
-        }
+          numColumns = {2}
 
-        showsHorizontalScrollIndicator={false}
-        
-        // keyExtractor = { item => item.id }
-        keyExtractor = { (item, index) => 'key' + index}
-        
-      />
+          renderItem = { ( {item} ) =>
+          // <Text style={ styles.textflat } > { item.nom } </Text>
+          <RenderArticles articles={item} />
+          }
+
+          showsHorizontalScrollIndicator={false}
+          
+          // keyExtractor = { item => item.id }
+          keyExtractor = { (item, index) => 'key' + index}
+          
+        />
+
+      </View>
 
     </View>
   )

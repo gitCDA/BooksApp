@@ -7,7 +7,7 @@ import { Image } from '@rneui/themed';
 import { useNavigation } from '@react-navigation/native';
 import { styles } from '../../../theme/ecommerce/styles';
 
-const Header = () => {
+const HeaderDetail = () => {
 
   const navigation = useNavigation() ;
 
@@ -17,17 +17,16 @@ const Header = () => {
 
   return (
 
-    <View style={styles.header}>
+    <View style={styles.headerDetail}>
 
       <Icon2 name='arrow-back-circle-outline' size={35} color='black' 
       onPress={ Retour }/>
 
       {/* METTRE source = { { uri : } } et require quand l'image est stocké localement */}
       <Image
-      style={styles.itemimageHeader}
+      style={styles.itemimageHeaderDetail}
       transition={true}
       transitionDuration={3500}
-      // resizeMode={'center'}
       source={ require('../../youtube/images/logo.jpg') }
       />
       
@@ -38,4 +37,4 @@ const Header = () => {
   
 }
 
-export default Header
+export default HeaderDetail

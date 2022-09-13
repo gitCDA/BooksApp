@@ -1,4 +1,4 @@
-import Header from './Header'
+import HeaderDetail from './HeaderDetail'
 import { ActivityIndicator, Button, Text, View } from 'react-native'
 import React, { useContext, useState, useEffect } from 'react'
 import { FirebaseContext } from '../../../firebaseContext';
@@ -21,7 +21,7 @@ const ArticleDetail = ( {articles} ) => {
   return (
 
     <View>
-    <Header/>
+    <HeaderDetail/>
 
 
     <View style={styles.topDetails}>

@@ -2,7 +2,6 @@ import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import First from './allApps/First';
 import NewsScreen from './allApps/AppNews';
 import Insta from './allApps/Insta';
 import ActionVerite from './allApps/ActionVerite';
@@ -12,12 +11,12 @@ import Details from './allApps/AppNews/components/Details';
 import DetailsYoutube from './allApps/youtube/components/DetailsYoutube';
 import Home from './allApps/youtube/components/Home';
 import Ecommerce from './allApps/E-commerce';
+import First from './allApps/First';
 // Importations Redux
 import store from './redux/store';
 import { Provider } from 'react-redux';
 
 import auth from '@react-native-firebase/auth';
-import Header from './allApps/E-commerce/Components/Header';
 
 
 const Stack = createNativeStackNavigator();

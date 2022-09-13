@@ -7,8 +7,7 @@ export const styles = StyleSheet.create({
 /******** Home */
     content:{
         flex : 1,
-        backgroundColor : colors.BgColorPrimary,
-        // margin : 10,
+        // backgroundColor : colors.BgColorPrimary,
         paddingTop: 10,
         paddingHorizontal:10,
     },
@@ -47,9 +46,6 @@ export const styles = StyleSheet.create({
 
 
 /********** Articles */
-contentArticle: {
-},
-
 titleArticle: {
     fontSize : 25,
     fontWeight : '500',
@@ -66,8 +62,12 @@ touchArticle: {
     borderRadius: 10,
     justifyContent:'center',
     alignItems:'center',
-    marginLeft: 15,
-    marginTop : 15,
+    marginLeft: 10,
+    marginTop : 7.5,
+},
+
+contentArticle: {
+    alignItems:'center',
 },
 /********** Fin Articles */
 
@@ -80,8 +80,8 @@ header:{
     flexDirection:"row",
     justifyContent:"space-between",
     alignItems:'center',
-    paddingHorizontal:15,
-    marginTop:0.5,
+    // marginTop:0.5,
+    // backgroundColor:'lime'
 },
 
 itemimageHeader:{
@@ -90,6 +90,57 @@ itemimageHeader:{
     aspectRatio: 4.5,
 },
 /*********** Fin Header */
+
+
+
+
+/*********** HeaderDetail */
+headerDetail:{
+    height:55,
+    flexDirection:"row",
+    justifyContent:"space-between",
+    alignItems:'center',
+    paddingHorizontal:15,
+    marginTop:0.5,
+},
+
+itemimageHeaderDetail:{
+    flex:1,
+    height:'100%',
+    aspectRatio: 4.5,
+},
+/*********** Fin HeaderDetail */
+
+
+
+
+/*********** SearchBar */
+contentSearchBar:{
+    height:155,
+    // flexDirection:"row",
+    // alignItems:'center',
+    // paddingHorizontal:15,
+    // marginTop:0.5,
+    backgroundColor:'red',
+    // justifyContent:'center'
+},
+
+iconeSearchBar:{
+    flexDirection: 'row',
+    alignItems: 'center',
+    backgroundColor:'grey',
+    borderWidth:1,
+},
+
+inputSearchBar:{
+    // flex:1,
+    height:45,
+},
+
+carrousselSearchBar:{
+
+},
+/*********** Fin SearchBar */
 
 
 

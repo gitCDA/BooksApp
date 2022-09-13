@@ -4,7 +4,7 @@ import { dataApp } from '../../datas/first'
 import RenderItem from './components/RenderItem'
 import { styles } from './theme/style'
 
-const Index = () => {
+const First = () => {
   return (
 
         <FlatList
@@ -23,4 +23,4 @@ const Index = () => {
   )
 }
 
-export default Index
+export default First

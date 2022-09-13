@@ -1,7 +1,6 @@
 import { ActivityIndicator, Text, View } from 'react-native'
 import React, { useContext, useState, useEffect } from 'react'
 import { FirebaseContext } from '../../../firebaseContext';
-import Header from '../Components/Header';
 import { styles } from '../../../theme/ecommerce/styles';
 import { Image } from '@rneui/base';
 import ArticleDetail from '../Components/ArticleDetail';
