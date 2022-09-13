@@ -1,20 +1,22 @@
 import { View, Text } from 'react-native';
 import React, { useContext, useEffect } from 'react';
-import Connexion from './Public/Connexion';
-import Private from './Private';
 import { useDispatch, useSelector } from 'react-redux';
-import Public from './Public';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import Home from './Screen/Home';
-import Settings from './Screen/Settings' ;
 import { FirebaseContext } from '../../firebaseContext' ;
-import { addArticle, addCategorie } from '../../redux/action';
+import { addArticle, addCategorie, editUser } from '../../redux/action';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import Detail from './Screen/Detail';
-import Panier from './Screen/Panier';
 import Icon from 'react-native-vector-icons/AntDesign';
 import Icon2 from 'react-native-vector-icons/Fontisto';
 import Icon3 from 'react-native-vector-icons/MaterialCommunityIcons';
+import auth from '@react-native-firebase/auth';
+import Detail from './Screen/Detail';
+import Panier from './Screen/Panier';
+import Home from './Screen/Home';
+import Settings from './Screen/Settings' ;
+import Public from './Public';
+import Connexion from './Public/Connexion';
+import Private from './Private';
+
 
 // Bottom Tabs création de fct° au lieu de constantes
 const Tab = createBottomTabNavigator(
@@ -115,13 +117,19 @@ const Acceuil = () => {
   }
   
 
-
+  const AuthStateChanged = ( user ) => {
+    console.log('AuthStateChanged user', user) ;
+    // Mets à jour l'user créer pdt l'inscription dans la session en cours (voir Private)
+    dispatch( editUser( user ) ) ;
+  }
 
 
   useEffect( () => {
 
     initCategories() ;
     initArticles() ;
+    const subscriber = auth().onAuthStateChanged(AuthStateChanged);
+    return subscriber; // unsubscribe on unmount
 
   }, [])
 

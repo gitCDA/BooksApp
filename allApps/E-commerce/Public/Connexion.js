@@ -1,5 +1,6 @@
-import { View, Text, Button } from 'react-native' ;
+import { View, Text } from 'react-native' ;
 import React from 'react' ;
+import { Button } from '@rneui/themed';
 import { useDispatch } from 'react-redux';
 import { useNavigation } from '@react-navigation/native';
 import { Input, Icon } from '@rneui/themed';
@@ -26,9 +27,25 @@ const Connexion = () => {
     <View>
 
       <Input>Connectez-vous</Input>
-      <Button onPress={ pressConnexion } title='Connexion' />
+      <Button
+        containerStyle={{
+          width: 200,
+          alignSelf:'center',
+          borderRadius:15,
+        }}
+        buttonStyle={{ backgroundColor: 'rgba(39, 39, 39, 1)' }}
+        type="clear"
+        titleStyle={{ color: 'rgba(78, 116, 289, 1)' }}
+        onPress={ pressConnexion } title='Connexion' />
 
-      <Button onPress={ GoToInscription } title='Inscrivez-vous dès maintenant !' />
+      <Button
+        containerStyle={{
+          width: 200,
+          alignSelf:'center',
+        }}
+        type="clear"
+        titleStyle={{ color: 'rgba(78, 116, 289, 1)' }}
+        onPress={ GoToInscription } title='Inscrivez-vous dès maintenant !' />
 
     </View>
 

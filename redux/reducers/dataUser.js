@@ -8,7 +8,6 @@ export default function ( state = initStateUser , action ) {
 
     if ( action.type == EDIT_USER ) {
         
-        // Voir détails dans dataCategorie
         return action.payload ;
         
     } else {

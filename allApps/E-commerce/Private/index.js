@@ -1,8 +1,10 @@
-import { View, Text, Button } from 'react-native'
-import React from 'react'
+import { View, Text } from 'react-native'
+import React, { useContext } from 'react'
+import { Button } from '@rneui/themed'
 import { useDispatch } from 'react-redux'
 import { useNavigation } from '@react-navigation/native'
 import { editUser } from '../../../redux/action'
+import index from '../index'
 import { styles } from '../../../theme/ecommerce/styles'
 
 const Index = () => {
@@ -10,18 +12,29 @@ const Index = () => {
   const dispatch = useDispatch() ;
 
   const navigation = useNavigation() ;
+
+  const userConnecte = useContext( index ) ;
     
   const pressDéconnexion = () => {
     // Changer valeur State
     dispatch( editUser( false ) ) ;
-    navigation.navigate( 'Public' ) ;
-   } ;
+    navigation.navigate( 'Connexion' ) ;
+  } ;
 
   return (
 
     <View>
       
-      <Button onPress={ pressDéconnexion } title='Déconnexion' />
+      <Text> {userConnecte.email} </Text>
+
+      <Button
+        containerStyle={{
+          width: 200,
+          alignSelf:'center',
+        }}
+        type="clear"
+        titleStyle={{ color: 'rgba(78, 116, 289, 1)' }}
+        onPress={ pressDéconnexion } title='Déconnexion' />
     
     </View>
 
