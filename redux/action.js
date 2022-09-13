@@ -1,11 +1,7 @@
-import { EDIT_LOGIN } from "./type";
-import { EDIT_NOMBRE } from "./type";
-import { ADD_CATEGORIE } from "./type";
-import { ADD_ARTICLE } from "./type";
-
-import { ADD_PANIER } from "./type";
-import { REMOVE_PANIER } from "./type";
-import { REMOVE_ONE_PANIER } from "./type";
+import { EDIT_LOGIN, EDIT_USER, EDIT_NOMBRE,
+ADD_CATEGORIE, ADD_ARTICLE, ADD_PANIER,
+REMOVE_PANIER, REMOVE_ONE_PANIER,
+} from "./type";
 
 export const editLogin = (login) => ( {
 
@@ -55,5 +51,14 @@ export const removeOnePanier = ( panier ) => ( {
 
     type : REMOVE_ONE_PANIER ,
     payload : panier ,
+
+} )
+
+
+// Gestion Authentification Utilisateur
+export const editUser = ( user ) => ( {
+
+    type : EDIT_USER ,
+    payload : user,
 
 } )

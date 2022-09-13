@@ -1,45 +1,13 @@
-import { Text, View, Button } from 'react-native'
+import { View, Text } from 'react-native'
 import React from 'react'
-import { styles } from '../../First/theme/style'
-import { useDispatch } from 'react-redux'
-import { editLogin } from '../../../redux/action'
-import { editNombre } from '../../../redux/action';
-import { useSelector } from 'react-redux';
+import { styles } from '../../../theme/ecommerce/styles'
 
-const Private = () => {
-
-  
-   // Récupérer la variable nombre qui est dans le state
-   const { nombre } = useSelector( state => state ) ;
-    
-   const dispatch = useDispatch() ;
-  
-   const pressDeconnexion = () => {
-    dispatch( editLogin( false ) ) ;
-    dispatch(editNombre( nombre - nombre )) ;
-    console.log("Déconnexion") ;
-   } ;
-  
-    const ajouter = () => {
-        dispatch(editNombre( nombre + 1 )) ;
-    } ;
-   
-   const voir = () => {
-        ;
-    } ;
-
+const Index = () => {
   return (
-
     <View>
-
-      <Text> Vous êtes connecté </Text>
-      <Text> Nombre : { nombre } </Text>
-      <Button onPress={ pressDeconnexion } title='Déconnexion' />
-      <Button onPress={ ajouter } title='Ajouter' />
-      <Button onPress={ voir } title='Voir' />
-
+      <Text>Mon Compte</Text>
     </View>
   )
 }
 
-export default Private
+export default Index

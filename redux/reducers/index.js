@@ -10,5 +10,7 @@ import dataArticle from "./dataArticle";
 
 import dataPanier from "./dataPanier";
 
+import dataUser from "./dataUser";
+
 export default combineReducers( { login, nombre, dataCategorie, dataArticle,
-dataPanier } ) ;
+dataPanier, dataUser } ) ;

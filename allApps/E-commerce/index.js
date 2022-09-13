@@ -12,7 +12,9 @@ import { addArticle, addCategorie } from '../../redux/action';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Detail from './Screen/Detail';
 import Panier from './Screen/Panier';
-import Icon from 'react-native-vector-icons/Feather';
+import Icon from 'react-native-vector-icons/AntDesign';
+import Icon2 from 'react-native-vector-icons/Fontisto';
+import Icon3 from 'react-native-vector-icons/MaterialCommunityIcons';
 
 // Bottom Tabs création de fct° au lieu de constantes
 const Tab = createBottomTabNavigator(
@@ -127,9 +129,20 @@ const Acceuil = () => {
   return (
 
     <Tab.Navigator screenOptions={{headerShown: false}} >
-      <Tab.Screen name="Acceuil" component={Acceuil} />
-      <Tab.Screen name="Panier" component={ Panier } />
-      <Tab.Screen name="Mon Compte" component={Settings} />
+      <Tab.Screen name="Acceuil" component={Acceuil} options={{
+          tabBarIcon: () => (
+            <Icon name="home" size={25} />
+          ), }} />
+
+      <Tab.Screen name="Panier" component={ Panier } options={{
+          tabBarIcon: () => (
+            <Icon2 name="shopping-basket-add" size={25} />
+          ), }} />
+
+      <Tab.Screen name="Mon Compte" component={Settings} options={{
+          tabBarIcon: () => (
+            <Icon3 name="account" size={25} />
+          ), }} />
     </Tab.Navigator>
 
   )

@@ -4,6 +4,7 @@ import { useSelector } from 'react-redux'
 import { useNavigation } from '@react-navigation/native'
 import Detail from '../Screen/Detail'
 import { styles } from '../../../theme/ecommerce/styles'
+import { Image } from '@rneui/base'
 
 
 // const data = [ 
@@ -26,9 +27,14 @@ const RenderArticles = ( {articles} ) => {
         style={ styles.touchArticle }
         onPress={ AllerVersDetails }
         >
-            <Text style={ styles.textArticle } >
-                { articles.nom }
-            </Text>
+
+          <Image
+            style={ styles.imageArticle }
+            source={ { uri : articles.image } }
+          />
+          <Text style={ styles.textArticle } >
+              { articles.nom }
+          </Text>
             
         </TouchableOpacity>
     )
@@ -53,16 +59,15 @@ const Articles = () => {
 
           data={ dataArticle }
 
-          horizontal={false}
-
-          numColumns = {2}
+          horizontal={true}
+          // numColumns = {2}
+          // showsHorizontalScrollIndicator={false}
 
           renderItem = { ( {item} ) =>
           // <Text style={ styles.textflat } > { item.nom } </Text>
           <RenderArticles articles={item} />
           }
 
-          showsHorizontalScrollIndicator={false}
           
           // keyExtractor = { item => item.id }
           keyExtractor = { (item, index) => 'key' + index}

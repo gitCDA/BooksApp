@@ -1,6 +1,9 @@
-import { StyleSheet } from "react-native"
+import { get } from "immer/dist/internal"
+import { StyleSheet, Dimensions } from "react-native"
 
 import { colors } from "./colors"
+
+const {hauteur, largeur} = Dimensions.get('window')
 
 export const styles = StyleSheet.create({
 
@@ -18,26 +21,44 @@ export const styles = StyleSheet.create({
 
 /********* Catégories */
     // contentCategorie: {
-    //     flex : 1,
-    //     width : '100%',
     // },
     
     titleCategorie: {
-        fontSize : 25,
+        fontSize : 15,
         fontWeight : '500',
     },
     
     textCategorie: {
         color:"#fff",
-        width : 105,
         textAlign:'center',
     },
     
     touchCategorie: {
         backgroundColor: 'blue',
-        borderRadius: 25,
+        borderRadius: 10,
         justifyContent:'center',
-        height: 35,
+        alignItems:'center',
+        height: 85,
+        aspectRatio:1,
+        margin: 7.5,
+    },
+    
+    titleCategorieArticle: {
+        fontSize : 15,
+        fontWeight : '500',
+    },
+    
+    textCategorieArticle: {
+        color:"#fff",
+        textAlign:'center',
+    },
+    
+    touchCategorieArticle: {
+        backgroundColor: 'blue',
+        borderRadius: 5,
+        justifyContent:'center',
+        alignItems:'center',
+        height: 55,
         margin: 7.5,
     },
 /**********Fin Catégorie */
@@ -56,18 +77,23 @@ textArticle: {
 },
 
 touchArticle: {
-    height: 200,
-    width : 150,
     backgroundColor: 'orange',
     borderRadius: 10,
     justifyContent:'center',
     alignItems:'center',
-    marginLeft: 10,
     marginTop : 7.5,
+    marginHorizontal: 10,
 },
 
 contentArticle: {
     alignItems:'center',
+    marginBottom:15,
+},
+
+imageArticle: {
+    height:85,
+    width:105,
+    borderRadius:10,
 },
 /********** Fin Articles */
 
@@ -108,6 +134,7 @@ itemimageHeaderDetail:{
     flex:1,
     height:'100%',
     aspectRatio: 4.5,
+    // resizeMode
 },
 /*********** Fin HeaderDetail */
 
@@ -116,29 +143,29 @@ itemimageHeaderDetail:{
 
 /*********** SearchBar */
 contentSearchBar:{
-    height:155,
-    // flexDirection:"row",
-    // alignItems:'center',
-    // paddingHorizontal:15,
-    // marginTop:0.5,
-    backgroundColor:'red',
-    // justifyContent:'center'
+    flexDirection:"row",
+    marginTop:15,
+    justifyContent:'space-between',
+    marginBottom:15,
 },
 
 iconeSearchBar:{
     flexDirection: 'row',
     alignItems: 'center',
-    backgroundColor:'grey',
     borderWidth:1,
+    backgroundColor:'rgba(240,241,242,1)',
+    borderRadius:5,
+    paddingLeft:10,
+},
+
+iconeSearchBar2:{
+    flexDirection: 'row',
+    alignSelf: 'center',
 },
 
 inputSearchBar:{
-    // flex:1,
-    height:45,
-},
-
-carrousselSearchBar:{
-
+    height:37.5,
+    width:305,
 },
 /*********** Fin SearchBar */
 

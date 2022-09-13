@@ -28,7 +28,10 @@ const ArticleDetail = ( {articles} ) => {
       
       <View style={styles.viewimagegchDetails} >
 
-        <Image style={styles.hautimagegchDetails} source={ { uri : articles.image } } />
+        <Image style={styles.hautimagegchDetails}
+        source={ { uri : articles.image } }
+        // PlaceholderContent={<ActivityIndicator/>}
+        />
         <Button
         title='Ajouter au panier'
         onPress={ ajouter }

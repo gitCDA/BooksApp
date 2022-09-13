@@ -2,6 +2,7 @@ import { View, Text, TextInput } from 'react-native'
 import React from 'react'
 import { styles } from '../../../theme/ecommerce/styles'
 import Icon from 'react-native-vector-icons/Fontisto'
+import Icon2 from 'react-native-vector-icons/Feather'
 
 const SearchBar = () => {
   return (
@@ -17,9 +18,8 @@ const SearchBar = () => {
                     // value={number}
                 />
         </View>
-
-        <View style={ styles.carrousselSearchBar}>
-
+        <View style={ styles.iconeSearchBar2}>
+          <Icon2 name="align-center" size={27.5} color="#000" />
         </View>
 
     </View>
