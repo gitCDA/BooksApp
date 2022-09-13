@@ -7,7 +7,7 @@ import Public from '../Public'
 
 const Settings = () => {
 
-  const { dataUser } = useSelector( state => state)
+  const { dataUser } = useSelector( state => state) ;
   console.log( "dataUser", dataUser)
 
   return (
