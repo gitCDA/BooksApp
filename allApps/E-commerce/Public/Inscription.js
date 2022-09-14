@@ -42,7 +42,7 @@ const Connexion = () => {
 
     <View>
 
-      <Text>Inscription</Text>
+      <Text>Inscrivez-vous</Text>
 
       <Input
         placeholder='Adresse Mail'

@@ -11,8 +11,6 @@ const Index = () => {
 
   const dispatch = useDispatch() ;
 
-  const navigation = useNavigation() ;
-
   const userConnecte = useContext( index ) ;
     
   const pressDéconnexion = () => {

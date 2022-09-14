@@ -30,7 +30,7 @@ const Acceuil = () => {
   )
 }
 
-  const App = () => {
+const App = () => {
     
   const firebase = useContext( FirebaseContext ) ;
   const dispatch = useDispatch() ;
@@ -105,13 +105,14 @@ const Acceuil = () => {
     // Mets à jour l'user créé pdt l'inscription dans la session en cours (voir Private)
     dispatch( editUser( user ) ) ;
   }
-
-
+  
+  
   useEffect( () => {
-
+    
     initCategories() ;
     initArticles() ;
     const subscriber = auth().onAuthStateChanged(AuthStateChanged);
+    console.log( 'subscriber', subscriber ) ;
     return subscriber; // unsubscribe on unmount
 
   }, [])

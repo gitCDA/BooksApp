@@ -28,36 +28,36 @@ const TutoFireList = () => {
   const [data, setData] = useState( [] ) ;
 
 
-  onResult = () => {
-    console.log('result') ;
+  // onResult = () => {
+  //   console.log('result') ;
     
-  }
+  // }
 
-  onError = () => {
-    console.log('error') ;
+  // onError = () => {
+  //   console.log('error') ;
 
-  }
+  // }
 
+  console.log('data', data) ;
 
-//   Chargement de mon composant ( voir ,[] )
-
+//    Se lance au chargement de mon composant ( voir , [] )
   useEffect( () => {
 
     // Capture ts les chgts dans Firebase
-    firestore().collection( 'stagiaires' ).onSnapshot( snapShot => {
-        // console.log(snapShot)
+    firestore().collection( 'stagiaires' ).onSnapshot( capture => {
+      // console.log(snapShot)
 
-        let dataTemp = [] ;
+      let dataTemp = [] ;
 
-        snapShot.forEach( document => {
+      capture.forEach( document => {
 
-            // Ajouter données reçues en live dans un tableau
-            dataTemp.push( { id: document.id, ...document.data() } ) ;
-            setData( dataTemp ) ;
-            console.log( dataTemp ) ;
-            // console.log( document.id, document.data() )
+          // Ajouter données reçues en live dans un tableau
+          dataTemp.push( { id: document.id, ...document.data() } ) ;
+          setData( dataTemp ) ;
+          console.log( dataTemp ) ;
+          // console.log( document.id, document.data() )
 
-        })
+      })
         
     }) ;
 

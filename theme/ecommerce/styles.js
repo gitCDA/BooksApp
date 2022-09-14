@@ -143,7 +143,7 @@ itemimageHeaderDetail:{
 
 /*********** SearchBar */
 contentSearchBar:{
-    flexDirection:"row",
+    // flexDirection:"row",
     marginTop:15,
     justifyContent:'space-between',
     marginBottom:15,
@@ -166,6 +166,12 @@ iconeSearchBar2:{
 inputSearchBar:{
     height:37.5,
     width:305,
+},
+
+imageDuLogo:{
+    height:80,
+    width:305,
+    alignSelf:'center',
 },
 /*********** Fin SearchBar */
 
