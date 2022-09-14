@@ -18,14 +18,14 @@ const Index = () => {
   const pressDéconnexion = () => {
     // Changer valeur State
     dispatch( editUser( false ) ) ;
-    navigation.navigate( 'Connexion' ) ;
+    // navigation.navigate( 'Connexion' ) ;
   } ;
 
   return (
 
     <View>
       
-      <Text> {userConnecte.email} </Text>
+      <Text></Text>
 
       <Button
         containerStyle={{

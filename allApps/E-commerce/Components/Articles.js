@@ -19,7 +19,7 @@ const RenderArticles = ( {articles} ) => {
     const navigation = useNavigation() ;
 
     const AllerVersDetails = () => {
-        navigation.navigate( 'DetailsArticle', { id: articles.id } )
+        navigation.navigate( 'Detail', { id: articles.id } )
     }
     
     return (

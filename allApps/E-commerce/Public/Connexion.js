@@ -15,7 +15,7 @@ const Connexion = () => {
   const pressConnexion = () => {
     // Changer valeur State
     dispatch( editUser( true ) ) ;
-    navigation.navigate( 'Private' ) ;
+    // navigation.navigate( 'Connexion' ) ;
    } ;
   
   const GoToInscription = () => {

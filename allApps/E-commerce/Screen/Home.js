@@ -9,7 +9,6 @@ import SearchBar from '../Components/SearchBar'
 const Home = () => {
   return (
     <View style={ styles.content }>
-      <Header/>
       <SearchBar />
       <Articles />
       <Categories />

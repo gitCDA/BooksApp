@@ -18,9 +18,7 @@ const Detail = ( {route} ) => {
 
 
     const NoArticle = () => {
-    
       return (<Text>Pas d'article</Text>)
-    
     }
     
 
@@ -35,7 +33,7 @@ const Detail = ( {route} ) => {
         setArticles( rqArticles.data() ) ;
         setLoad( false ) ;
 
-      }, 0 )
+      }, 1000 )
 
       console.log( "greiperpger", articles ) ;
       // console.log( "greiperpger", rqArticles.data() ) ;

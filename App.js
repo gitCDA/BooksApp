@@ -2,6 +2,7 @@ import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import auth from '@react-native-firebase/auth';
 import NewsScreen from './allApps/AppNews';
 import Insta from './allApps/Insta';
 import ActionVerite from './allApps/ActionVerite';
@@ -16,7 +17,6 @@ import First from './allApps/First';
 import store from './redux/store';
 import { Provider } from 'react-redux';
 
-import auth from '@react-native-firebase/auth';
 
 
 const Stack = createNativeStackNavigator();
@@ -25,18 +25,18 @@ const Stack = createNativeStackNavigator();
 const App = () => {
 
 
-  auth()
-  .signInAnonymously()
-  .then(() => {
-    console.log('User signed in anonymously');
-  })
-  .catch(error => {
-    if (error.code === 'auth/operation-not-allowed') {
-      console.log('Enable anonymous in your firebase console.');
-    }
+  // auth()
+  // .signInAnonymously()
+  // .then(() => {
+  //   console.log('User signed in anonymously');
+  // })
+  // .catch(error => {
+  //   if (error.code === 'auth/operation-not-allowed') {
+  //     console.log('Enable anonymous in your firebase console.');
+  //   }
 
-    console.error(error);
-  });
+  //   console.error(error);
+  // });
 
 
   return (
