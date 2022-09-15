@@ -9,7 +9,7 @@ import { Image } from '@rneui/themed'
 const SearchBar = () => {
   
 const [logo, setLogo] = useState([]) ;
-console.log( '258', logo ) ;
+// console.log( '258', logo ) ;
   
   useEffect( () => {
     
@@ -20,7 +20,7 @@ console.log( '258', logo ) ;
         capture.forEach( document => {
         imageLogo = { id: document.id, ...document.data() }  ;
         setLogo( imageLogo ) ;
-        console.log( '12345', imageLogo ) ;
+        // console.log( '12345', imageLogo ) ;
         })
       }
       ) ;
@@ -31,23 +31,30 @@ console.log( '258', logo ) ;
     
     <View style={styles.contentSearchBar}>
         
-      <View style={ styles.iconeSearchBar}>
-        <Icon name="search" size={20} color="#000" />
-          <TextInput
-            style={styles.inputSearchBar}
-            placeholder="Search for product"
-            keyboardType='default'
-            // onChangeText={onChangeNumber}
-            // value={number}
-            />
-      </View>
-      <View style={ styles.iconeSearchBar2}>
-        <Icon2 name="align-center" size={27.5} color="#000" />
+      <View style={ styles.SearchBar}>
+        <View style={ styles.iconeSearchBar}>
+          <Icon name="search" size={20} color="#000" />
+            <TextInput
+              style={styles.inputSearchBar}
+              placeholder="Search for product"
+              keyboardType='default'
+              // onChangeText={onChangeNumber}
+              // value={number}
+              />
+        </View>
+        <View style={ styles.iconeSearchBar2}>
+          <Icon2 name="align-center" size={27.5} color="#000" />
+        </View>
       </View>
 
-      { console.log('rrrd',  logo.image) }
+      {/* { console.log('rrrd',  logo.image) } */}
     
-      <Image containerStyle={ styles.imageDuLogo } source={ { uri : logo.image } } />
+      <View style={ styles.imageDuLogoView }>
+        <Image containerStyle={ styles.imageDuLogo }
+        source={ { uri : logo.image } }
+        resizeMode= 'stretch'
+        />
+      </View>
 
     </View>
   )

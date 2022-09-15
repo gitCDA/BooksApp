@@ -86,7 +86,7 @@ const Connexion = () => {
         }}
         buttonStyle={{ backgroundColor: 'rgba(39, 39, 39, 1)' }}
         type="solid"
-        titleStyle={{ color: 'rgba(78, 116, 289, 1)' }}
+        titleStyle={{ color: 'rgba(78, 115, 289, 1)' }}
         onPress={ save }
         title="Je m'inscris" />
 
@@ -96,7 +96,7 @@ const Connexion = () => {
           alignSelf:'center'
         }}
         type="clear"
-        titleStyle={{ color: 'rgba(78, 116, 289, 1)' }}
+        titleStyle={{ color: 'rgba(78, 115, 289, 1)' }}
         onPress={ GoToConnexion }
         title='Déjà Inscrit ? Connectez-vous' />
 

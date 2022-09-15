@@ -90,7 +90,7 @@ const Connexion = () => {
         }}
         buttonStyle={{ backgroundColor: 'rgba(39, 39, 39, 1)' }}
         type="clear"
-        titleStyle={{ color: 'rgba(78, 116, 289, 1)' }}
+        titleStyle={{ color: 'rgba(78, 115, 289, 1)' }}
         onPress={ pressConnexion } title='Connexion' />
 
       <Button
@@ -99,7 +99,7 @@ const Connexion = () => {
           alignSelf:'center',
         }}
         type="clear"
-        titleStyle={{ color: 'rgba(78, 116, 289, 1)' }}
+        titleStyle={{ color: 'rgba(78, 115, 289, 1)' }}
         onPress={ GoToInscription } title='Inscrivez-vous dès maintenant !' />
 
     </View>

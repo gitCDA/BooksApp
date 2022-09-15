@@ -144,9 +144,15 @@ itemimageHeaderDetail:{
 /*********** SearchBar */
 contentSearchBar:{
     // flexDirection:"row",
-    marginTop:15,
+    marginTop:5,
     justifyContent:'space-between',
-    marginBottom:15,
+    marginBottom:7.5,
+},
+
+SearchBar:{
+    flexDirection: 'row',
+    justifyContent:'center',
+    backgroundColor:'rgba(240,241,242,1)',
 },
 
 iconeSearchBar:{
@@ -168,10 +174,16 @@ inputSearchBar:{
     width:305,
 },
 
+imageDuLogoView:{
+    
+},
+
 imageDuLogo:{
     height:80,
-    width:305,
+    width:205,
+    borderRadius:10,
     alignSelf:'center',
+    marginTop:15,
 },
 /*********** Fin SearchBar */
 
