@@ -3,14 +3,14 @@ import { StyleSheet, Dimensions } from "react-native"
 
 import { colors } from "./colors"
 
-const {hauteur, largeur} = Dimensions.get('window')
+const {hauteur} = Dimensions.get('window').height ;
+const {largeur} = Dimensions.get('window').width ;
 
 export const styles = StyleSheet.create({
 
 /******** Home */
     content:{
-        flex : 1,
-        // backgroundColor : colors.BgColorPrimary,
+        flex:1,
         paddingTop: 10,
         paddingHorizontal:10,
     },
@@ -20,8 +20,10 @@ export const styles = StyleSheet.create({
 
 
 /********* Catégories */
-    // contentCategorie: {
-    // },
+    contentCategorie: {
+        flex:4,
+        // backgroundColor:'green',
+    },
     
     titleCategorie: {
         fontSize : 15,
@@ -58,7 +60,7 @@ export const styles = StyleSheet.create({
         borderRadius: 5,
         justifyContent:'center',
         alignItems:'center',
-        height: 55,
+        // height: 55,
         margin: 7.5,
     },
 /**********Fin Catégorie */
@@ -68,31 +70,34 @@ export const styles = StyleSheet.create({
 
 /********** Articles */
 titleArticle: {
-    fontSize : 25,
+    fontSize : 20,
     fontWeight : '500',
 },
 
 textArticle: {
     color:"#fff",
+    alignSelf:'auto',
 },
 
 touchArticle: {
     backgroundColor: 'orange',
     borderRadius: 10,
-    justifyContent:'center',
-    alignItems:'center',
-    marginTop : 7.5,
     marginHorizontal: 10,
+    // height:'70%',
+    width:55,
+    marginTop : 7.5,
 },
 
 contentArticle: {
+    flex:2,
     alignItems:'center',
-    marginBottom:15,
+    marginBottom:7.5,
+    backgroundColor:'blue',
 },
 
 imageArticle: {
-    height:85,
-    width:105,
+    height:'90%',
+    width:'100%',
     borderRadius:10,
 },
 /********** Fin Articles */
@@ -100,9 +105,62 @@ imageArticle: {
 
 
 
+/*********** SearchBar */
+contentSearchBar:{
+    flex:2,
+    marginTop:7.5,
+    justifyContent:'space-between',
+    marginBottom:7.5,
+    backgroundColor:'red',
+},
+
+SearchBar:{
+    backgroundColor:'red',
+    flexDirection: 'row',
+    justifyContent:'center',
+    backgroundColor:'rgba(240,241,242,1)',
+    alignItems: 'center',
+    marginHorizontal:10,
+},
+
+iconeSearchBar:{
+    flexDirection: 'row',
+    alignItems: 'center',
+    borderWidth:1,
+    backgroundColor:'rgba(240,241,242,1)',
+    borderRadius:5,
+    paddingLeft:10,
+    // height:'85%',
+},
+
+iconeSearchBar2:{
+    flexDirection: 'row',
+    alignSelf: 'center',
+},
+
+inputSearchBar:{
+    // width:'90%',
+},
+
+imageDuLogoView:{
+    
+},
+
+imageDuLogo:{
+    height:'55%',
+    width:'95%',
+    borderRadius:10,
+    alignSelf:'center',
+    marginTop:15,
+},
+/*********** Fin SearchBar */
+
+
+
+
 /*********** Header */
 header:{
-    height:55,
+    // height:55,
     flexDirection:"row",
     justifyContent:"space-between",
     alignItems:'center',
@@ -111,9 +169,9 @@ header:{
 },
 
 itemimageHeader:{
-    flex:1,
-    height:'100%',
-    aspectRatio: 4.5,
+    // flex:1,
+    // height:'100%',
+    // aspectRatio: 4.5,
 },
 /*********** Fin Header */
 
@@ -137,55 +195,6 @@ itemimageHeaderDetail:{
     // resizeMode
 },
 /*********** Fin HeaderDetail */
-
-
-
-
-/*********** SearchBar */
-contentSearchBar:{
-    // flexDirection:"row",
-    marginTop:5,
-    justifyContent:'space-between',
-    marginBottom:7.5,
-},
-
-SearchBar:{
-    flexDirection: 'row',
-    justifyContent:'center',
-    backgroundColor:'rgba(240,241,242,1)',
-},
-
-iconeSearchBar:{
-    flexDirection: 'row',
-    alignItems: 'center',
-    borderWidth:1,
-    backgroundColor:'rgba(240,241,242,1)',
-    borderRadius:5,
-    paddingLeft:10,
-},
-
-iconeSearchBar2:{
-    flexDirection: 'row',
-    alignSelf: 'center',
-},
-
-inputSearchBar:{
-    height:37.5,
-    width:305,
-},
-
-imageDuLogoView:{
-    
-},
-
-imageDuLogo:{
-    height:80,
-    width:205,
-    borderRadius:10,
-    alignSelf:'center',
-    marginTop:15,
-},
-/*********** Fin SearchBar */
 
 
 

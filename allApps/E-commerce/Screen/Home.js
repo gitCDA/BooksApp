@@ -3,7 +3,6 @@ import { styles } from '../../../theme/ecommerce/styles'
 import React from 'react'
 import Categories from '../Components/Categories'
 import Articles from '../Components/Articles'
-import Header from '../Components/Header'
 import SearchBar from '../Components/SearchBar'
 
 const Home = () => {

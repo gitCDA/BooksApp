@@ -2,7 +2,6 @@ import { StyleSheet, Text, View, FlatList, TouchableOpacity } from 'react-native
 import React from 'react'
 import { useSelector } from 'react-redux'
 import { useNavigation } from '@react-navigation/native'
-import Detail from '../Screen/Detail'
 import { styles } from '../../../theme/ecommerce/styles'
 import { Image } from '@rneui/base'
 
@@ -24,8 +23,8 @@ const RenderArticles = ( {articles} ) => {
     
     return (
         <TouchableOpacity
-        style={ styles.touchArticle }
-        onPress={ AllerVersDetails }
+          style={ styles.touchArticle }
+          onPress={ AllerVersDetails }
         >
 
           <Image
@@ -49,11 +48,11 @@ const Articles = () => {
     
   return (
 
-    <View>
+    <View style={ styles.contentArticle }>
 
       <Text style={ styles.titleArticle } >Articles</Text>
 
-      <View style={ styles.contentArticle }>
+      <View>
 
         <FlatList
 
