@@ -1,11 +1,11 @@
-import { Text, View, FlatList, TouchableOpacity } from 'react-native'
+import { Text, View, FlatList, TouchableOpacity, Image } from 'react-native'
 import React from 'react'
 import { useSelector } from 'react-redux'
 import { styles } from '../../../theme/ecommerce/styles'
-import { Icon } from 'react-native-vector-icons/Icon'
-import { Icon2 } from 'react-native-vector-icons/Icon'
-import { Icon3 } from 'react-native-vector-icons/Icon'
-import { Icon4 } from 'react-native-vector-icons/Icon'
+// import { Icon } from 'react-native-vector-icons/Icon'
+// import { Icon2 } from 'react-native-vector-icons/Icon'
+// import { Icon3 } from 'react-native-vector-icons/Icon'
+// import { Icon4 } from 'react-native-vector-icons/Icon'
 
 // const data = [ 
 //     { id:1, nom:"cat1" },
@@ -19,6 +19,10 @@ const RenderCategories = ( {categorie} ) => {
     
     return (
         <TouchableOpacity style={ styles.touchCategorie } >
+          <Image
+            style={ styles.imageArticleIcone }
+            source={ { uri : categorie.icone } }
+          />
           <Text style={ styles.textCategorie } >
               { categorie.nom }
           </Text>

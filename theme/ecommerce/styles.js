@@ -11,7 +11,7 @@ export const styles = StyleSheet.create({
 /******** Home */
     content:{
         flex:1,
-        backgroundColor:'rgb(225,202,168)',
+        backgroundColor:'rgba(225,202,168,0.75)',
         paddingTop: 10,
         paddingHorizontal:10,
     },
@@ -37,12 +37,18 @@ export const styles = StyleSheet.create({
     
     touchCategorie: {
         backgroundColor: 'blue',
-        borderRadius: 10,
+        borderTopLeftRadius:10,
+        borderBottomRightRadius:10,
         justifyContent:'center',
         alignItems:'center',
         height: ( Dimensions.get('window').height * 0.115 ),
         aspectRatio:1,
         marginLeft: 7.5,
+    },
+    
+    imageArticleIcone: {
+        height: ( Dimensions.get('window').height * 0.115 ),
+        aspectRatio:1,
     },
     
     touchCategorie2: {
@@ -106,7 +112,6 @@ touchArticle2: {
 contentArticle: {
     flex:2,
     alignItems:'center',
-    marginBottom:7.5,
 },
 
 imageArticle: {
@@ -155,6 +160,7 @@ inputSearchBar:{
 },
 
 imageDuLogoView:{
+    alignItems:'center',
 },
 
 imageDuLogo:{
@@ -162,6 +168,7 @@ imageDuLogo:{
     aspectRatio:3.5,
     borderRadius:10,
     marginTop:7.5,
+    opacity:0.75,
 },
 /*********** Fin SearchBar */
 
