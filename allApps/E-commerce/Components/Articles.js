@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, FlatList, TouchableOpacity } from 'react-native'
+import { Text, View, FlatList, TouchableOpacity } from 'react-native'
 import React from 'react'
 import { useSelector } from 'react-redux'
 import { useNavigation } from '@react-navigation/native'
@@ -22,10 +22,10 @@ const RenderArticles = ( {articles} ) => {
     }
     
     return (
-        <TouchableOpacity
-          style={ styles.touchArticle }
-          onPress={ AllerVersDetails }
-        >
+      <TouchableOpacity
+      onPress={ AllerVersDetails }>
+
+        <View style={ styles.touchArticle }>
 
           <Image
             style={ styles.imageArticle }
@@ -35,7 +35,9 @@ const RenderArticles = ( {articles} ) => {
               { articles.nom }
           </Text>
             
-        </TouchableOpacity>
+        </View>
+
+      </TouchableOpacity>
     )
     
 }
@@ -57,6 +59,8 @@ const Articles = () => {
         <FlatList
 
           data={ dataArticle }
+
+          style={ styles.touchArticle2 }
 
           horizontal={true}
           // numColumns = {2}

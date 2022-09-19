@@ -11,6 +11,7 @@ export const styles = StyleSheet.create({
 /******** Home */
     content:{
         flex:1,
+        backgroundColor:'rgb(225,202,168)',
         paddingTop: 10,
         paddingHorizontal:10,
     },
@@ -22,7 +23,6 @@ export const styles = StyleSheet.create({
 /********* Catégories */
     contentCategorie: {
         flex:4,
-        // backgroundColor:'green',
     },
     
     titleCategorie: {
@@ -40,9 +40,13 @@ export const styles = StyleSheet.create({
         borderRadius: 10,
         justifyContent:'center',
         alignItems:'center',
-        height: 85,
+        height: ( Dimensions.get('window').height * 0.115 ),
         aspectRatio:1,
-        margin: 7.5,
+        marginLeft: 7.5,
+    },
+    
+    touchCategorie2: {
+        height: ( Dimensions.get('window').height * 0.04 ),
     },
     
     titleCategorieArticle: {
@@ -58,10 +62,14 @@ export const styles = StyleSheet.create({
     touchCategorieArticle: {
         backgroundColor: 'blue',
         borderRadius: 5,
-        justifyContent:'center',
-        alignItems:'center',
-        // height: 55,
+        height: ( Dimensions.get('window').height * 0.075 ),
+        // justifyContent:'center',
+        // alignItems:'center',
         margin: 7.5,
+    },
+    
+    touchCategorieArticle2: {
+        height: ( Dimensions.get('window').height * 0.175 ),
     },
 /**********Fin Catégorie */
 
@@ -75,30 +83,36 @@ titleArticle: {
 },
 
 textArticle: {
+    textAlign:'center',
+    backgroundColor: 'rgba(200,135,25,1)',
+    borderBottomLeftRadius:10,
+    borderBottomRightRadius:10,
     color:"#fff",
-    alignSelf:'auto',
 },
 
 touchArticle: {
-    backgroundColor: 'orange',
     borderRadius: 10,
     marginHorizontal: 10,
-    // height:'70%',
-    width:55,
+    height: ( Dimensions.get('window').height * 0.13 ),
+    aspectRatio:1.5,
     marginTop : 7.5,
+    backgroundColor:'red',
+},
+
+touchArticle2: {
+    height: ( Dimensions.get('window').height * 0.05 ),
 },
 
 contentArticle: {
     flex:2,
     alignItems:'center',
     marginBottom:7.5,
-    backgroundColor:'blue',
 },
 
 imageArticle: {
-    height:'90%',
-    width:'100%',
-    borderRadius:10,
+    height:'100%',
+    borderTopLeftRadius:10,
+    borderTopRightRadius:10,
 },
 /********** Fin Articles */
 
@@ -108,50 +122,46 @@ imageArticle: {
 /*********** SearchBar */
 contentSearchBar:{
     flex:2,
-    marginTop:7.5,
-    justifyContent:'space-between',
-    marginBottom:7.5,
-    backgroundColor:'red',
+    alignItems:'center',
+    marginHorizontal:7.5,
 },
 
 SearchBar:{
-    backgroundColor:'red',
     flexDirection: 'row',
-    justifyContent:'center',
-    backgroundColor:'rgba(240,241,242,1)',
+    justifyContent:'space-between',
     alignItems: 'center',
-    marginHorizontal:10,
+    width:'100%',
+    aspectRatio:7,
+    
 },
 
 iconeSearchBar:{
     flexDirection: 'row',
     alignItems: 'center',
-    borderWidth:1,
-    backgroundColor:'rgba(240,241,242,1)',
-    borderRadius:5,
+    borderWidth:0.5,
+    backgroundColor:'rgba(240,241,242,0.5)',
+    borderRadius:7.5,
     paddingLeft:10,
-    // height:'85%',
+    // height:'75%',
 },
 
 iconeSearchBar2:{
     flexDirection: 'row',
-    alignSelf: 'center',
 },
 
 inputSearchBar:{
-    // width:'90%',
+    width:'75%',
+    aspectRatio:5,
 },
 
 imageDuLogoView:{
-    
 },
 
 imageDuLogo:{
-    height:'55%',
     width:'95%',
+    aspectRatio:3.5,
     borderRadius:10,
-    alignSelf:'center',
-    marginTop:15,
+    marginTop:7.5,
 },
 /*********** Fin SearchBar */
 

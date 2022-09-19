@@ -43,7 +43,7 @@ const [logo, setLogo] = useState([]) ;
               />
         </View>
         <View style={ styles.iconeSearchBar2}>
-          <Icon2 name="align-center" size={27.5} color="#000" />
+          <Icon2 name="align-center" size={27} color="#000" />
         </View>
       </View>
 

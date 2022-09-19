@@ -19,7 +19,6 @@ const RenderCategories = ( {categorie} ) => {
     
     return (
         <TouchableOpacity style={ styles.touchCategorie } >
-          
           <Text style={ styles.textCategorie } >
               { categorie.nom }
           </Text>
@@ -59,12 +58,12 @@ const Categories = () => {
 
         data={ dataCategorie }
 
+        style={ styles.touchCategorie2 }
+
         renderItem = { ( {item} ) =>
         // <Text style={ styles.textflat } > { item.nom } </Text>
 
-        <RenderCategories categorie={item} />
-
-        }
+        <RenderCategories categorie={item} /> }
 
         // keyExtractor = { item => item.id }
         keyExtractor = { (item, index) => 'key' + index}
@@ -76,13 +75,14 @@ const Categories = () => {
       <Text style={ styles.titleCategorieArticle } >Categories</Text>
 
       <FlatList 
+
         data={ dataArticle }
+
+        style={ styles.touchCategorieArticle2 }
 
         renderItem = { ( {item} ) =>
 
-        <RenderArticles article={item} />
-
-        }
+        <RenderArticles article={item} /> }
 
         keyExtractor = { (item, index) => 'key' + index}
       />
