@@ -4,6 +4,7 @@ import { Button } from '@rneui/themed'
 import { useDispatch } from 'react-redux'
 import { useNavigation } from '@react-navigation/native'
 import { editUser } from '../../../redux/action'
+import auth from '@react-native-firebase/auth';
 import index from '../index'
 import { styles } from '../../../theme/ecommerce/styles'
 
@@ -14,6 +15,9 @@ const Index = () => {
   const userConnecte = useContext( index ) ;
     
   const pressDéconnexion = () => {
+    // auth()
+    // .signOut()
+    // .then(() => console.log('User signed out!'));
     // Changer valeur State
     dispatch( editUser( false ) ) ;
     // navigation.navigate( 'Connexion' ) ;
