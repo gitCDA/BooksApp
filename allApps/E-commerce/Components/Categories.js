@@ -33,17 +33,17 @@ const RenderCategories = ( {categorie} ) => {
 
 
 
-const RenderArticles = ( {article} ) => {
+// const RenderArticles = ( {article} ) => {
     
-    return (
-        <TouchableOpacity style={ styles.touchCategorieArticle } >
-            <Text style={ styles.textCategorieArticle } >
-                { article.nom }
-            </Text>
-        </TouchableOpacity>
-    )
+//     return (
+//         <TouchableOpacity style={ styles.touchCategorieArticle } >
+//             <Text style={ styles.textCategorieArticle } >
+//                 { article.nom }
+//             </Text>
+//         </TouchableOpacity>
+//     )
     
-}
+// }
 
 const Categories = () => {
 
@@ -76,7 +76,7 @@ const Categories = () => {
         
       />
 
-      <Text style={ styles.titleCategorieArticle } >Categories</Text>
+      {/* <Text style={ styles.titleCategorieArticle } >Categories</Text>
 
       <FlatList 
 
@@ -89,7 +89,7 @@ const Categories = () => {
         <RenderArticles article={item} /> }
 
         keyExtractor = { (item, index) => 'key' + index}
-      />
+      /> */}
 
     </View>
   )

@@ -9,8 +9,8 @@ const Home = () => {
   return (
     <View style={ styles.content }>
       <SearchBar />
-      <Articles />
       <Categories />
+      <Articles />
     </View>
   )
 }

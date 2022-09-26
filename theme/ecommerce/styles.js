@@ -1,4 +1,3 @@
-import { get } from "immer/dist/internal"
 import { StyleSheet, Dimensions } from "react-native"
 
 import { colors } from "./colors"
@@ -11,7 +10,7 @@ export const styles = StyleSheet.create({
 /******** Home */
     content:{
         flex:1,
-        backgroundColor:'rgba(225,202,168,0.75)',
+        backgroundColor:'rgba(255,255,255,1)',
         paddingTop: 10,
         paddingHorizontal:10,
     },
@@ -22,7 +21,7 @@ export const styles = StyleSheet.create({
 
 /********* Catégories */
     contentCategorie: {
-        flex:4,
+        flex:2,
     },
     
     titleCategorie: {
@@ -36,7 +35,8 @@ export const styles = StyleSheet.create({
     },
     
     touchCategorie: {
-        backgroundColor: 'blue',
+        backgroundColor: 'rgba(25,25,25,0.8)',
+        borderWidth:1.5,
         borderTopLeftRadius:10,
         borderBottomRightRadius:10,
         justifyContent:'center',
@@ -47,7 +47,7 @@ export const styles = StyleSheet.create({
     },
     
     imageArticleIcone: {
-        height: ( Dimensions.get('window').height * 0.115 ),
+        height: ( Dimensions.get('window').height * 0.05 ),
         aspectRatio:1,
     },
     
@@ -83,6 +83,12 @@ export const styles = StyleSheet.create({
 
 
 /********** Articles */
+
+contentArticle: {
+    flex:9,
+    alignItems:'center',
+},
+
 titleArticle: {
     fontSize : 20,
     fontWeight : '500',
@@ -99,19 +105,15 @@ textArticle: {
 touchArticle: {
     borderRadius: 10,
     marginHorizontal: 10,
-    height: ( Dimensions.get('window').height * 0.13 ),
+    height: ( Dimensions.get('window').height * 0.15 ),
     aspectRatio:1.5,
-    marginTop : 7.5,
+    marginTop:15,
+    marginBottom:35,
     backgroundColor:'red',
 },
 
 touchArticle2: {
     height: ( Dimensions.get('window').height * 0.05 ),
-},
-
-contentArticle: {
-    flex:2,
-    alignItems:'center',
 },
 
 imageArticle: {
@@ -126,9 +128,9 @@ imageArticle: {
 
 /*********** SearchBar */
 contentSearchBar:{
-    flex:2,
+    flex:1,
     alignItems:'center',
-    marginHorizontal:7.5,
+    marginHorizontal:10,
 },
 
 SearchBar:{
@@ -202,14 +204,12 @@ headerDetail:{
     justifyContent:"space-between",
     alignItems:'center',
     paddingHorizontal:15,
-    marginTop:0.5,
+    // marginTop:0.5,
 },
 
 itemimageHeaderDetail:{
-    flex:1,
     height:'100%',
     aspectRatio: 4.5,
-    // resizeMode
 },
 /*********** Fin HeaderDetail */
 

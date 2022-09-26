@@ -62,9 +62,10 @@ const Articles = () => {
 
           style={ styles.touchArticle2 }
 
-          horizontal={true}
-          // numColumns = {2}
-          // showsHorizontalScrollIndicator={false}
+          // horizontal={true}
+          
+          numColumns = {2}
+          showsHorizontalScrollIndicator={false}
 
           renderItem = { ( {item} ) =>
           // <Text style={ styles.textflat } > { item.nom } </Text>

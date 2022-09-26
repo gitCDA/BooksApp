@@ -49,12 +49,12 @@ const [logo, setLogo] = useState([]) ;
 
       {/* { console.log('rrrd',  logo.image) } */}
     
-      <View style={ styles.imageDuLogoView }>
+      {/* <View style={ styles.imageDuLogoView }>
         <Image style={ styles.imageDuLogo }
         source={ { uri : logo.image } }
         resizeMode= 'stretch'
         />
-      </View>
+      </View> */}
 
     </View>
   )

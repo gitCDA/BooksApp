@@ -1,6 +1,6 @@
 import { Text, View } from 'react-native'
 import React from 'react'
-import Icon from 'react-native-vector-icons/Feather'
+import Icon from 'react-native-vector-icons/Entypo'
 import Icon2 from 'react-native-vector-icons/Ionicons'
 // import firestore from '@react-native-firebase/firestore'
 import { Image } from '@rneui/themed';
@@ -27,10 +27,11 @@ const HeaderDetail = () => {
       style={styles.itemimageHeaderDetail}
       transition={true}
       transitionDuration={3500}
+      resizeMode= 'center'
       source={ require('../../youtube/images/logo.jpg') }
       />
       
-      <Icon name='watch' size={25} color='black' />
+      <Icon name='dots-three-horizontal' size={25} color='black' />
 
     </View>
   )
