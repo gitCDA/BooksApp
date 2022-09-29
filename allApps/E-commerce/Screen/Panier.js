@@ -3,12 +3,39 @@ import React from 'react'
 import { Button } from '@rneui/themed'
 import { useSelector } from 'react-redux'
 import { useDispatch } from 'react-redux'
+import firestore from '@react-native-firebase/firestore'
+
 import { removePanier } from '../../../redux/action'
 import PanierItem from '../Components/PanierItem'
+import { styles as ecommerceStyles } from '../../../theme/ecommerce/styles'
 
 <PanierItem />
 
 const Panier = () => {
+  
+  const [montantTotal , setMontantTotal] = React.useState(0) ;
+
+  let total = 0 ;
+
+  // Calculer la Somme des Prix dans le Panier
+  const sommePrixPanier = () => {
+
+    dataPanier.forEach( (element) => {
+
+      total = total + element.prix ;
+
+      console.log(total) ;
+
+    }) ;
+
+  }
+
+  // Ajouter le panier dans la commande
+  const addCommande = () => {
+
+    console.log('addCommande') ;
+
+  }
 
   const {dataPanier} =  useSelector( state => state ) ;
   const dispatch = useDispatch() ;
@@ -16,10 +43,19 @@ const Panier = () => {
 
   const remove = () => {
 
-    dispatch( removePanier() )
-    console.log( dataPanier )
+    dispatch( removePanier() ) ;
+    console.log( dataPanier ) ;
 
   }
+
+  React.useEffect(() => {
+
+      sommePrixPanier() ;
+
+      setMontantTotal( total ) ;
+
+  }, [dataPanier])
+  
 
   return (
     <View style={ styles.container }>
@@ -38,12 +74,13 @@ const Panier = () => {
         <View style={ styles.bottom }>
 
           <View style={ styles.prix }>
-            <Text>Prix</Text>
+            <Text style={ ecommerceStyles.detailPrix }> {montantTotal} € </Text>
           </View>
 
           <View style={ styles.acheter }>
 
             <Button
+            onPress={addCommande}
             buttonStyle={ styles.buttonStyle }
             containerStyle={ styles.containerButtonStyle }> Acheter </Button>
 

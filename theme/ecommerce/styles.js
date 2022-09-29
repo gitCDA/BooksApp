@@ -35,12 +35,12 @@ export const styles = StyleSheet.create({
     },
     
     touchCategorie: {
-        backgroundColor: 'rgba(25,25,25,0.8)',
+        backgroundColor: 'rgba(25,25,25,0.45)',
         borderWidth:1.5,
         borderTopLeftRadius:10,
         borderBottomRightRadius:10,
-        justifyContent:'center',
         alignItems:'center',
+        justifyContent:'space-evenly',
         height: ( Dimensions.get('window').height * 0.115 ),
         aspectRatio:1,
         marginLeft: 7.5,
@@ -100,6 +100,14 @@ textArticle: {
     borderBottomLeftRadius:10,
     borderBottomRightRadius:10,
     color:"#fff",
+},
+
+textQuantite: {
+    position:'absolute',
+    right:10,
+    justifyContent:'center',
+    fontSize:25,
+    color:"#000",
 },
 
 touchArticle: {
@@ -236,6 +244,11 @@ contentPanier: {
 
   prixPanier: {
     color:'black',
+  },
+
+  detailPrix: {
+    color:'blue',
+    fontSize:25,
   },
 
   removeOnePanier: {

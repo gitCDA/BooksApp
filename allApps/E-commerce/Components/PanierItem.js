@@ -1,12 +1,12 @@
-import { StyleSheet, Text, View } from 'react-native'
+import { Text, View } from 'react-native'
 import React from 'react'
 import { ListItem, Button, Avatar } from '@rneui/themed'
 import { useDispatch } from 'react-redux'
 import { removeOnePanier } from '../../../redux/action'
+import { styles } from '../../../theme/ecommerce/styles'
 
 
 const PanierItem = ( { item } ) => {
-
     
     const dispatch = useDispatch() ;
   
@@ -17,35 +17,41 @@ const PanierItem = ( { item } ) => {
     
     return(
       
-      <View style={ styles.contentPanier }>
+      <View>
 
         <ListItem.Swipeable
 
-            rightContent={(removeOnePanier) => (
+            rightContent={() => (
                 <Button
                 title="Delete"
-                onPress={() => removeOnePanier( item )}
+                onPress={() => dispatch(removeOnePanier( item )) }
                 buttonStyle={{ minHeight: '100%', backgroundColor: 'red' }}
                 // icon={{ name: 'delete', color: 'white' }}
                 />
             )}
+
         >
             
             <Avatar title={item.nom[0]} source={{ uri: item.image }} />
             
             <ListItem.Content>
-                <ListItem.Title> {item.nom} </ListItem.Title>
+                <ListItem.Title style={ styles.textArticle }> {item.nom} </ListItem.Title>
+                <ListItem.Subtitle style={ styles.textArticle }> {item.prix} € </ListItem.Subtitle>
+                
+                <ListItem.Subtitle style={ styles.textQuantite }>
+                    {item.quantite}
+                </ListItem.Subtitle>
+
             </ListItem.Content>
-            <ListItem.Chevron />
             
         </ListItem.Swipeable>
   
-          <View>
+          {/* <View>
           <Text style={ styles.nomPanier }>
             { item.nom }
           </Text>
           <Text style={ styles.prixPanier }>
-            {/* Si un prix est dispo l'afficher */}
+            Si un prix est dispo l'afficher
             { item?.prix } €
           </Text>
           </View>
@@ -56,13 +62,12 @@ const PanierItem = ( { item } ) => {
             title='Supprimer'
             onPress={ removeOne }
           />
-          </View>
+          </View> */}
   
-        </View>
+      </View>
 
-  )
+    )
+  
 }
 
 export default PanierItem
-
-const styles = StyleSheet.create({})
