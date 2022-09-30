@@ -14,6 +14,10 @@ import { styles as ecommerceStyles } from '../../../theme/ecommerce/styles'
 
 const Panier = () => {
   
+  const {dataPanier, dataUser} =  useSelector( state => state ) ;
+  const dispatch = useDispatch() ;
+  console.log('data :', dataPanier) ;
+  
   const [montantTotal , setMontantTotal] = React.useState(0) ;
 
   let total = 0 ;
@@ -32,24 +36,36 @@ const Panier = () => {
   }
 
   // Ajouter le panier dans la commande
-  const addCommande = () => {
+  const addCommande = async () => {
 
     // Création de la table Commande
-    const commande = {
+    const commandeValue = {
       etat : false,
       total : montantTotal,
+      uid : dataUser.uid,
       date : moment(new Date()).format(),
     } ;
 
+    // console.log('dataUser', dataUser) ;
+
+    // Création de la commande
+    const commande = await firestore().collection("Commande").add(commandeValue) ;
     console.log('addCommande', commande) ;
 
-    firestore().collection("Commande").add(commande) ;
+    // Ajouter le contenu de la commande en bouclant sur chq éléments avec map
+    await dataPanier.map( async element =>{
+
+      await firestore().collection("Commande").doc(commande.id)
+                       .collection("Detail").add( element ) ;
+
+      console.log(element) ;
+
+    }) ;
+
+    // remove () ;
+    dispatch( removePanier() ) ;
 
   }
-
-  const {dataPanier, dataUser} =  useSelector( state => state ) ;
-  const dispatch = useDispatch() ;
-  console.log('data :', dataPanier) ;
 
   const remove = () => {
 

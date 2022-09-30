@@ -2,24 +2,21 @@ import { View, Text } from 'react-native'
 import React, { useContext } from 'react'
 import { Button } from '@rneui/themed'
 import { useDispatch } from 'react-redux'
-import { useNavigation } from '@react-navigation/native'
 import { editUser } from '../../../redux/action'
-import auth from '@react-native-firebase/auth';
-import index from '../index'
-import { styles } from '../../../theme/ecommerce/styles'
+import Commande from '../Components/Commande'
+// import { useNavigation } from '@react-navigation/native'
 
 const Index = () => {
 
   const dispatch = useDispatch() ;
-
-  const userConnecte = useContext( index ) ;
+  // const userConnecte = useContext( index ) ;
     
   const pressDéconnexion = () => {
+    dispatch( editUser( false ) ) ;
     // auth()
     // .signOut()
     // .then(() => console.log('User signed out!'));
     // Changer valeur State
-    dispatch( editUser( false ) ) ;
     // navigation.navigate( 'Connexion' ) ;
   } ;
 
@@ -27,7 +24,7 @@ const Index = () => {
 
     <View>
       
-      <Text></Text>
+      <Commande />
 
       <Button
         containerStyle={{

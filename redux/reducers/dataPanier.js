@@ -12,7 +12,7 @@ export default function ( state = initStatePanier , action ) {
 
             console.log("action.payload", action.payload.id) ;
             // Vérification que l'élément existe ou pas pour savoir si on crée ou on incrémente après le else
-                if( !existItem( state, action.payload ) ){
+                if( !existItem( state, action.payload.id ) ){
 
                     const item ={ ...action.payload, quantite: 1 };
                     console.log('opul', item) ;
