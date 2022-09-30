@@ -4,6 +4,7 @@ import { Button } from '@rneui/themed'
 import { useSelector } from 'react-redux'
 import { useDispatch } from 'react-redux'
 import firestore from '@react-native-firebase/firestore'
+import moment from 'moment/moment'
 
 import { removePanier } from '../../../redux/action'
 import PanierItem from '../Components/PanierItem'
@@ -33,11 +34,20 @@ const Panier = () => {
   // Ajouter le panier dans la commande
   const addCommande = () => {
 
-    console.log('addCommande') ;
+    // Création de la table Commande
+    const commande = {
+      etat : false,
+      total : montantTotal,
+      date : moment(new Date()).format(),
+    } ;
+
+    console.log('addCommande', commande) ;
+
+    firestore().collection("Commande").add(commande) ;
 
   }
 
-  const {dataPanier} =  useSelector( state => state ) ;
+  const {dataPanier, dataUser} =  useSelector( state => state ) ;
   const dispatch = useDispatch() ;
   console.log('data :', dataPanier) ;
 
