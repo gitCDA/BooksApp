@@ -91,7 +91,7 @@ contentArticle: {
 
 titleArticle: {
     fontSize : 20,
-    fontWeight : '500',
+    fontWeight: '500',
 },
 
 textArticle: {

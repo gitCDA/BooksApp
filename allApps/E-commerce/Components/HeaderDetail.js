@@ -1,8 +1,8 @@
-import { Text, View } from 'react-native'
-import React from 'react'
-import Icon from 'react-native-vector-icons/Entypo'
-import Icon2 from 'react-native-vector-icons/Ionicons'
-// import firestore from '@react-native-firebase/firestore'
+import { Text, View } from 'react-native';
+import React from 'react';
+import Icon from 'react-native-vector-icons/Entypo';
+import Icon2 from 'react-native-vector-icons/Ionicons';
+// import firestore from '@react-native-firebase/firestore';
 import { Image } from '@rneui/themed';
 import { useNavigation } from '@react-navigation/native';
 import { styles } from '../../../theme/ecommerce/styles';
